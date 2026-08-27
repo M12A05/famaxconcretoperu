@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="flex justify-start">
           <Link href="/" className="flex items-center gap-2 shrink-0 -ml-2 lg:-ml-6">
             <Image
-              src="/images/famax-icon.png"
+              src="/images/logo-famax.png"
               alt="FAMAX CONCRETO PERÚ Logo"
               width={240}
               height={70}
