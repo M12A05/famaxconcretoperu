@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #8B0000;
+  --color-primary-hover: #6B0000;
+  --color-background: #F5F5F0;
+  --color-background-white: #FFFFFF;
+  --color-background-dark: #1A1A1A;
+  --color-text: #1A1A1A;
+  --color-text-muted: #555555;
+  --color-border: #E0E0E0;
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-playfair), serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Animaciones de Entrada (Load) */
+@keyframes slide-in-left {
+  0% { transform: translateX(-50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slide-in-right {
+  0% { transform: translateX(50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes fade-in-up {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-slide-left { animation: slide-in-left 0.8s ease-out forwards; opacity: 0; }
+.animate-slide-right { animation: slide-in-right 0.8s ease-out forwards; opacity: 0; }
+.animate-fade-up { animation: fade-in-up 0.8s ease-out forwards; opacity: 0; }
+.animate-fade-in { animation: fade-in 1s ease-out forwards; opacity: 0; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* Custom Scrollbar Minimalista */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8; 
+}
+
+/* Soporte para Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f5f5f5;
 }
