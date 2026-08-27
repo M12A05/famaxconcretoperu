@@ -1,10 +1,15 @@
 import { createClient } from "@supabase/supabase-js";
 import { NextRequest, NextResponse } from "next/server";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+const getSupabaseClient = () => {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!url || !key) {
+    return null;
+  }
+  return createClient(url, key);
+};
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,6 +18,12 @@ export async function POST(req: NextRequest) {
 
     if (!nombre || !ruc_dni || !tipo_concreto || !volumen || !ubicacion || !tipo_vaciado) {
       return NextResponse.json({ error: "Todos los campos son obligatorios." }, { status: 400 });
+    }
+
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      console.warn("Supabase no configurado en este entorno. Saltando guardado de datos.");
+      return NextResponse.json({ success: true, warning: "Database not configured" }, { status: 201 });
     }
 
     const { error } = await supabase.from("leads").insert([
