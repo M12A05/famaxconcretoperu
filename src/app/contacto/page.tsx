@@ -3,7 +3,20 @@
 import { useState } from "react";
 import { CheckCircle2, Phone, MapPin, MessageCircle, Mail } from "lucide-react";
 import type { FormEvent } from "react";
+import type { Metadata } from "next";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
+
+export const metadata: Metadata = {
+  title: "Contacto | FAMAX CONCRETO PERÚ",
+  description: "Cotiza concreto premezclado para tu obra en Lima Norte. Atención rápida, laboratorio propio y entrega puntual. Contáctanos por WhatsApp o correo.",
+  alternates: { canonical: "https://famaxconcretoperu.vercel.app/contacto" },
+  openGraph: {
+    title: "Contacto | FAMAX CONCRETO PERÚ",
+    description: "Cotiza concreto premezclado para tu obra en Lima Norte. Atención rápida y entrega puntual.",
+    url: "https://famaxconcretoperu.vercel.app/contacto",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+};
 
 const TIPOS_CONCRETO = [
   "f'c 140 kg/cm2", "f'c 175 kg/cm2", "f'c 210 kg/cm2",

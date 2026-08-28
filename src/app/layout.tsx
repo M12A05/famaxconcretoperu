@@ -8,7 +8,7 @@ import WhatsAppFAB from "@/components/ui/WhatsAppFAB";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
-const BASE_URL = "https://famaxconcreto.vercel.app";
+const BASE_URL = "https://famaxconcretoperu.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -100,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="es">
+    <html lang="es-PE">
       <head>
         <script
           type="application/ld+json"

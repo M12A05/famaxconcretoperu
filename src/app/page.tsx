@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, Truck, ArrowRight, Factory, ShieldCheck, ArrowUpFromLine, LayoutGrid, Layers, HardHat, Calculator, ChevronLeft, ChevronRight } from "lucide-react";
+import { Truck, ArrowRight, Factory, ShieldCheck, ArrowUpFromLine, LayoutGrid, Layers, HardHat, Calculator, ChevronRight } from "lucide-react";
 
 const slides = [
   {
@@ -34,6 +34,33 @@ const slides = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    
+    if (isLeftSwipe) {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }
+    if (isRightSwipe) {
+      setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    }
+    
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   // Intersection Observer para animaciones al hacer scroll (solo se dispara una vez)
   useEffect(() => {
@@ -72,7 +99,12 @@ export default function Home() {
   return (
     <>
       {/* Hero Section Carousel */}
-      <section className="relative h-[90vh] sm:h-[85vh] min-h-[600px] flex items-center justify-start overflow-hidden group">
+      <section 
+        className="relative h-[90vh] sm:h-[85vh] min-h-[600px] flex items-center justify-start overflow-hidden group"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {slides.map((slide, index) => (
           <div
             key={index}

@@ -6,12 +6,12 @@ import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
 export const metadata: Metadata = {
   title: "Productos y Servicios | FAMAX CONCRETO PERÚ",
-  description: "Concreto premezclado f'c 175, f'c 210, adoquines, cachacos, baldosas podotáctiles, maquinaria pesada y bombeo de concreto en Lima Norte. Fichas técnicas disponibles.",
-  alternates: { canonical: "https://famaxconcreto.vercel.app/productos-y-servicios" },
+  description: "Catálogo completo de FAMAX: Concreto Premezclado f'c 210, Adoquines, Baldosas Podotáctiles, Bombeo y Alquiler de Mixers en Lima.",
+  alternates: { canonical: "https://famaxconcretoperu.vercel.app/productos-y-servicios" },
   openGraph: {
     title: "Productos y Servicios | FAMAX CONCRETO PERÚ",
-    description: "Catálogo completo de concreto premezclado, adoquines, cachacos, baldosas y servicios de bombeo. Alta calidad en Lima Norte.",
-    url: "https://famaxconcreto.vercel.app/productos-y-servicios",
+    description: "Catálogo completo de FAMAX: Concreto Premezclado f'c 210, Adoquines, Baldosas Podotáctiles, Bombeo y Alquiler de Mixers.",
+    url: "https://famaxconcretoperu.vercel.app/productos-y-servicios",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };

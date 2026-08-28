@@ -7,11 +7,11 @@ import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 export const metadata: Metadata = {
   title: "¿Quiénes Somos? | FAMAX CONCRETO PERÚ",
   description: "Empresa 100% peruana con 6 años de experiencia en producción y suministro de concreto premezclado en Lima Norte. Laboratorio propio y aditivo Quincha.",
-  alternates: { canonical: "https://famaxconcreto.vercel.app/nosotros" },
+  alternates: { canonical: "https://famaxconcretoperu.vercel.app/nosotros" },
   openGraph: {
     title: "¿Quiénes Somos? | FAMAX CONCRETO PERÚ",
     description: "Somos una concretera 100% peruana con laboratorio propio, flota de mixers y 6 años atendiendo Lima Norte con puntualidad y calidad.",
-    url: "https://famaxconcreto.vercel.app/nosotros",
+    url: "https://famaxconcretoperu.vercel.app/nosotros",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
@@ -44,7 +44,7 @@ export default function NosotrosPage() {
             {/* Imagen */}
             <div className="relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <Image
-                src="/images/Quienes Somos.png"
+                src="/images/quienes-somos.png"
                 alt="Equipo de FAMAX CONCRETO PERÚ"
                 fill
                 className="object-cover object-center"
