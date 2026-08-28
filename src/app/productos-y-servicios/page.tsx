@@ -206,6 +206,35 @@ export default function ProductosServiciosPage() {
         </div>
       </section>
 
+      {/* B2C Guide: ¿Qué concreto necesito? */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-12 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
+            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Guía de Autoconstrucción: ¿Qué concreto necesito?</h2>
+            <div className="w-16 h-[3px] bg-[#AD131B] mx-auto mb-5" />
+            <p className="text-gray-600 font-medium">Te ayudamos a elegir la resistencia ideal para la seguridad de tu hogar.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="bg-[#FBF9F8] p-6 rounded-xl border border-gray-200 shadow-sm opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
+              <h3 className="text-xl font-black text-[#AD131B] mb-2">f'c 175 kg/cm²</h3>
+              <p className="font-bold text-[#1A1A1A] mb-2 uppercase text-sm">Veredas y Falsos Pisos</p>
+              <p className="text-gray-600 text-sm font-medium">Concreto básico ideal para superficies peatonales, estacionamientos ligeros o bases de nivelación donde no hay peso estructural.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border-2 border-[#AD131B] shadow-md relative mt-4 md:mt-0 opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
+              <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-[#AD131B] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">El más usado</div>
+              <h3 className="text-xl font-black text-[#AD131B] mb-2">f'c 210 kg/cm²</h3>
+              <p className="font-bold text-[#1A1A1A] mb-2 uppercase text-sm">Techos, Vigas y Columnas</p>
+              <p className="text-gray-600 text-sm font-medium">El estándar obligatorio para la construcción de viviendas de hasta 3-4 pisos. Proporciona la seguridad estructural que tu familia necesita.</p>
+            </div>
+            <div className="bg-[#FBF9F8] p-6 rounded-xl border border-gray-200 shadow-sm opacity-0 scroll-animate" data-animation="animate-slide-right delay-300">
+              <h3 className="text-xl font-black text-[#AD131B] mb-2">f'c 280+ kg/cm²</h3>
+              <p className="font-bold text-[#1A1A1A] mb-2 uppercase text-sm">Zapatas y Edificios</p>
+              <p className="text-gray-600 text-sm font-medium">Concreto de alta resistencia. Obligatorio para cimientos profundos, edificios de más de 5 pisos o zonas con suelo muy salitroso.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Documentación */}
       <section className="py-16 bg-background">
         <div className="container-custom">
@@ -218,20 +247,20 @@ export default function ProductosServiciosPage() {
             </div>
             <div className="flex flex-col gap-4 opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <a
-                href="#"
+                href="/ficha-tecnica-concreto.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-[#1A1A1A] hover:bg-black text-white py-3.5 px-8 rounded-xl font-bold uppercase text-xs md:text-sm transition-all shadow-md hover:shadow-lg"
               >
-                <FileText size={18} /> Descargar Fichas Técnicas (PDF)
+                <FileText size={18} /> Descargar Ficha Técnica de Concreto (PDF)
               </a>
               <a
-                href="#"
+                href="/protocolo-laboratorio.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-white border border-[#1A1A1A] text-[#1A1A1A] hover:bg-gray-50 py-3.5 px-8 rounded-xl font-bold uppercase text-xs md:text-sm transition-all shadow-sm"
               >
-                <FileDown size={18} /> Ver Protocolos de Laboratorio (PDF)
+                <FileDown size={18} /> Ver Protocolo de Laboratorio (PDF)
               </a>
             </div>
           </div>

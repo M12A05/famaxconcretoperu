@@ -5,6 +5,7 @@ import { CheckCircle2, Phone, MapPin, MessageCircle, Mail } from "lucide-react";
 import type { FormEvent } from "react";
 import type { Metadata } from "next";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
+import ConcreteCalculator from "@/components/ui/ConcreteCalculator";
 
 export const metadata: Metadata = {
   title: "Contacto | FAMAX CONCRETO PERÚ",
@@ -200,6 +201,15 @@ export default function ContactoPage() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Calculadora Section */}
+      <section className="py-16 bg-[#FBF9F8]">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto opacity-0 scroll-animate" data-animation="animate-fade-up delay-100">
+            <ConcreteCalculator />
           </div>
         </div>
       </section>

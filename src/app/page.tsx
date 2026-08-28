@@ -1,179 +1,14 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Truck, ArrowRight, Factory, ShieldCheck, ArrowUpFromLine, LayoutGrid, Layers, HardHat, Calculator, ChevronRight } from "lucide-react";
-
-const slides = [
-  {
-    image: "/images/hero.png",
-    subtitle: "",
-    title: "Concreto para pequeñas<br />y grandes obras",
-    desc: "",
-    align: "center",
-    buttonText: "COTIZAR"
-  },
-  {
-    image: "/images/servicios-integrales.png",
-    subtitle: "",
-    title: "Comprometidos con<br />nuestros clientes",
-    desc: "Brindamos Certificado de Calidad<br />de nuestro concreto.",
-    align: "left",
-    buttonText: "Más información"
-  },
-  {
-    image: "/images/concreto-premezclado.png",
-    subtitle: "CALIDAD Y PUNTUALIDAD",
-    title: "La base sólida para<br />el éxito de tu proyecto",
-    desc: "Garantizamos despachos exactos y mezclas diseñadas a la medida.",
-    align: "center",
-    buttonText: "COTIZAR"
-  }
-];
+import HeroCarousel from "@/components/home/HeroCarousel";
+import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-    
-    if (isLeftSwipe) {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }
-    if (isRightSwipe) {
-      setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    }
-    
-    setTouchStart(0);
-    setTouchEnd(0);
-  };
-
-  // Intersection Observer para animaciones al hacer scroll (solo se dispara una vez)
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            const animation = el.getAttribute("data-animation");
-            if (animation) {
-              el.classList.add(...animation.split(" "));
-              el.classList.remove("opacity-0");
-              observer.unobserve(el);
-            }
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
-    );
-
-    document.querySelectorAll(".scroll-animate").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  // Carrusel Autoplay
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 6000); // 6 segundos es un poco más suave
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-
   return (
     <>
-      {/* Hero Section Carousel */}
-      <section 
-        className="relative h-[90vh] sm:h-[85vh] min-h-[600px] flex items-center justify-start overflow-hidden group"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
-              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            <Image
-              src={slide.image}
-              alt="Famax Concreto Perú"
-              fill
-              className={`object-cover object-center transition-transform duration-[7000ms] ease-out ${
-                index === currentSlide ? "scale-100" : "scale-[1.15]"
-              }`}
-              priority={index === 0}
-              quality={100}
-            />
-            {/* Overlay sutil para legibilidad, similar al del video */}
-            <div className={`absolute inset-0 ${slide.align === 'left' ? 'bg-gradient-to-r from-black/50 via-black/20 to-transparent' : 'bg-black/20'} z-10`} />
-            
-            <div className="container-custom relative z-20 w-full h-full flex items-center">
-              <div className={`w-full mt-8 sm:mt-0 transition-all duration-1000 transform ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${slide.align === 'center' ? 'text-center mx-auto' : 'text-left'}`}>
-                
-                {slide.subtitle && (
-                  <h2 className={`text-xs sm:text-sm md:text-base font-bold mb-3 text-white tracking-[0.2em] drop-shadow-md ${slide.align === 'center' ? 'mx-auto' : ''}`}>
-                    {slide.subtitle}
-                  </h2>
-                )}
-
-                <h1 
-                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 leading-[1.05] text-white drop-shadow-xl ${slide.align === 'center' ? 'mx-auto' : 'max-w-4xl'}`}
-                  dangerouslySetInnerHTML={{ __html: slide.title }}
-                />
-
-                {slide.desc && (
-                  <p 
-                    className={`text-base sm:text-lg md:text-xl text-white font-medium mb-8 leading-relaxed drop-shadow-md ${slide.align === 'center' ? 'mx-auto max-w-2xl' : 'max-w-xl'}`}
-                    dangerouslySetInnerHTML={{ __html: slide.desc }}
-                  />
-                )}
-
-                <Link
-                  href="/contacto"
-                  className={`inline-flex items-center gap-3 bg-[#E50019] hover:bg-[#CC0016] text-white pl-6 md:pl-8 pr-2 py-2 rounded-full font-bold text-sm md:text-lg transition-all shadow-xl group ${slide.align === 'center' && !slide.desc ? 'mt-4' : ''}`}
-                >
-                  <span>{slide.buttonText}</span>
-                  <div className="bg-white text-[#E50019] p-2 rounded-full group-hover:bg-gray-100 transition-colors">
-                    <ChevronRight size={20} strokeWidth={3.5} className="ml-0.5" />
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-
-
-
-        {/* Indicadores (Puntos) */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`w-3 h-3 rounded-full transition-all ${idx === currentSlide ? 'bg-[#AD131B] scale-125' : 'bg-white/50 hover:bg-white'}`}
-              aria-label={`Ir a diapositiva ${idx + 1}`}
-            />
-          ))}
-        </div>
-      </section>
+      <ScrollRevealObserver />
+      <HeroCarousel />
 
       {/* Why Choose Us */}
       <section className="py-16 bg-[#FBF9F8]">
@@ -245,7 +80,7 @@ export default function Home() {
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
               {/* Imagen de fondo */}
               <Image
-                src="/images/concreto-premezclado.png"
+                src="/images/concreto-premezclado.webp"
                 alt="Concreto Premezclado FAMAX"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
@@ -276,7 +111,7 @@ export default function Home() {
 
             {/* Tarjeta 2: Adoquines de Concreto */}
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
-              <Image src="/images/adoquines.png" alt="Adoquines de Concreto FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
+              <Image src="/images/adoquines.webp" alt="Adoquines de Concreto FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
                 <h3 className="text-white text-center font-bold text-lg md:text-xl tracking-wide">Adoquines de Concreto</h3>
@@ -290,7 +125,7 @@ export default function Home() {
 
             {/* Tarjeta 3: Baldosas Podotáctiles */}
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-right delay-300">
-              <Image src="/images/catalogo/Baldosas Podotáctiles.png" alt="Baldosas Podotáctiles FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
+              <Image src="/images/catalogo/Baldosas Podotáctiles.webp" alt="Baldosas Podotáctiles FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
                 <h3 className="text-white text-center font-bold text-lg md:text-xl tracking-wide">Baldosas Podotáctiles</h3>
@@ -311,7 +146,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="order-2 lg:order-1 relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
               <Image
-                src="/images/servicios-integrales.png"
+                src="/images/servicios-integrales.webp"
                 alt="Planta de concreto y equipos de FAMAX CONCRETO PERÚ en Puente Piedra"
                 fill
                 className="object-cover object-center"
@@ -360,6 +195,63 @@ export default function Home() {
               >
                 SOLICITAR COTIZACIÓN DE SERVICIOS
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Proyectos Ejecutados */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-14 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
+            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Proyectos Ejecutados</h2>
+            <div className="w-16 h-[3px] bg-[#AD131B] mx-auto mb-5" />
+            <p className="text-gray-600 font-medium">Experiencia comprobada abasteciendo a las principales obras de infraestructura y desarrollo urbano en Lima Norte.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Pavimentación Industrial", img: "/images/adoquines.webp" },
+              { title: "Losa Deportiva Puente Piedra", img: "/images/concreto-premezclado.webp" },
+              { title: "Cimentación Edificio Residencial", img: "/images/servicios-integrales.webp" }
+            ].map((proj, i) => (
+              <div key={i} className={`group relative h-64 rounded-xl overflow-hidden shadow-sm opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
+                <Image src={proj.img} alt={proj.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <h3 className="text-white font-bold text-lg">{proj.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonios */}
+      <section className="py-16 bg-[#FBF9F8]">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-14 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
+            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Lo que dicen nuestros clientes</h2>
+            <div className="w-16 h-[3px] bg-[#AD131B] mx-auto mb-5" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
+              <p className="text-gray-600 font-medium italic mb-6">"Excelente servicio. Necesitaba 20 cubos para la cimentación de mi proyecto y llegaron exactos a la hora pactada. El certificado de calidad nos dio mucha tranquilidad."</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center text-gray-500 font-bold">JC</div>
+                <div>
+                  <p className="font-bold text-[#1A1A1A]">Ing. Javier Cáceres</p>
+                  <p className="text-xs text-gray-500 uppercase">Constructora JC</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
+              <p className="text-gray-600 font-medium italic mb-6">"Primera vez que construyo mi casa y el equipo de FAMAX me asesoró en todo. La bomba telescópica facilitó el vaciado del segundo piso enormemente."</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center text-gray-500 font-bold">MR</div>
+                <div>
+                  <p className="font-bold text-[#1A1A1A]">María Rojas</p>
+                  <p className="text-xs text-gray-500 uppercase">Propietaria</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
