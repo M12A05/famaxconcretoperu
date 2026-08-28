@@ -28,7 +28,7 @@ const DISTRITOS = ["Ancón", "Ventanilla", "Puente Piedra", "Carabayllo", "Comas
 
 export default function ContactoPage() {
   const [form, setForm] = useState({
-    nombre: "", ruc_dni: "", tipo_concreto: "", volumen: "", ubicacion: "", tipo_vaciado: "bomba",
+    nombre: "", ruc_dni: "", tipo_concreto: "", volumen: "", ubicacion: "", tipo_vaciado: "bomba", bot_field: ""
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -153,6 +153,9 @@ export default function ContactoPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot anti-spam */}
+                  <input type="text" name="bot_field" value={form.bot_field} onChange={handleChange} style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <input name="nombre" value={form.nombre} onChange={handleChange} required placeholder="Nombre completo o empresa *" className={inputClass} />
                     <input name="ruc_dni" value={form.ruc_dni} onChange={handleChange} required placeholder="RUC o DNI *" className={inputClass} />
