@@ -80,7 +80,7 @@ export default function Home() {
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
               {/* Imagen de fondo */}
               <Image
-                src="/images/concreto-premezclado.webp"
+                src="/images/concreto-premezclado.png"
                 alt="Concreto Premezclado FAMAX"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
@@ -111,7 +111,7 @@ export default function Home() {
 
             {/* Tarjeta 2: Adoquines de Concreto */}
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
-              <Image src="/images/adoquines.webp" alt="Adoquines de Concreto FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
+              <Image src="/images/adoquines.png" alt="Adoquines de Concreto FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
                 <h3 className="text-white text-center font-bold text-lg md:text-xl tracking-wide">Adoquines de Concreto</h3>
@@ -125,7 +125,7 @@ export default function Home() {
 
             {/* Tarjeta 3: Baldosas Podotáctiles */}
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-right delay-300">
-              <Image src="/images/catalogo/Baldosas Podotáctiles.webp" alt="Baldosas Podotáctiles FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
+              <Image src="/images/catalogo/Baldosas Podotáctiles.png" alt="Baldosas Podotáctiles FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
                 <h3 className="text-white text-center font-bold text-lg md:text-xl tracking-wide">Baldosas Podotáctiles</h3>
@@ -146,7 +146,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="order-2 lg:order-1 relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
               <Image
-                src="/images/servicios-integrales.webp"
+                src="/images/servicios-integrales.png"
                 alt="Planta de concreto y equipos de FAMAX CONCRETO PERÚ en Puente Piedra"
                 fill
                 className="object-cover object-center"
@@ -209,9 +209,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "Pavimentación Industrial", img: "/images/adoquines.webp" },
-              { title: "Losa Deportiva Puente Piedra", img: "/images/concreto-premezclado.webp" },
-              { title: "Cimentación Edificio Residencial", img: "/images/servicios-integrales.webp" }
+              { title: "Pavimentación Industrial", img: "/images/adoquines.png" },
+              { title: "Losa Deportiva Puente Piedra", img: "/images/concreto-premezclado.png" },
+              { title: "Cimentación Edificio Residencial", img: "/images/servicios-integrales.png" }
             ].map((proj, i) => (
               <div key={i} className={`group relative h-64 rounded-xl overflow-hidden shadow-sm opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
                 <Image src={proj.img} alt={proj.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />

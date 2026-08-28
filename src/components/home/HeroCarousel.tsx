@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/hero.webp",
+    image: "/images/hero.png",
     subtitle: "",
     title: "Concreto para pequeñas<br />y grandes obras",
     desc: "",
@@ -15,7 +15,7 @@ const slides = [
     buttonText: "COTIZAR"
   },
   {
-    image: "/images/servicios-integrales.webp",
+    image: "/images/servicios-integrales.png",
     subtitle: "",
     title: "Comprometidos con<br />nuestros clientes",
     desc: "Brindamos Certificado de Calidad<br />de nuestro concreto.",
@@ -23,7 +23,7 @@ const slides = [
     buttonText: "Más información"
   },
   {
-    image: "/images/concreto-premezclado.webp",
+    image: "/images/concreto-premezclado.png",
     subtitle: "CALIDAD Y PUNTUALIDAD",
     title: "La base sólida para<br />el éxito de tu proyecto",
     desc: "Garantizamos despachos exactos y mezclas diseñadas a la medida.",
