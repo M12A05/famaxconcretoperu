@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background-white border-b border-border shadow-sm">
-      <div className="container-custom mx-auto h-24 md:h-28 flex items-center justify-between">
+      <div className="container-custom mx-auto h-20 md:h-24 flex items-center justify-between">
         {/* Logo */}
         <div className="flex justify-start">
           <Link href="/" className="flex items-center gap-2 shrink-0 -ml-2 lg:-ml-6">
@@ -28,7 +28,7 @@ export default function Navbar() {
               alt="FAMAX CONCRETO PERÚ Logo"
               width={240}
               height={70}
-              className="object-contain w-auto h-14 md:h-20"
+              className="object-contain w-auto h-12 md:h-16"
               priority
             />
           </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-24 md:top-28 left-0 w-full bg-background-white border-b border-border shadow-lg">
+        <div className="lg:hidden absolute top-20 md:top-24 left-0 w-full bg-background-white border-b border-border shadow-lg">
           <nav className="flex flex-col p-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

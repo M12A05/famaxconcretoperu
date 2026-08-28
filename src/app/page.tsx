@@ -8,21 +8,27 @@ import { CheckCircle2, Truck, ArrowRight, Factory, ShieldCheck, ArrowUpFromLine,
 const slides = [
   {
     image: "/images/hero.png",
-    subtitle: "CONCRETERA EN LIMA · CONCRETO PREMEZCLADO · CONCRETERA PERÚ",
-    title: "CONCRETO DE ALTA<br />RESISTENCIA",
-    desc: "Concreto premezclado de alta resistencia, elaborado con materiales de primera calidad y tecnología de vanguardia."
+    subtitle: "",
+    title: "Concreto para pequeñas<br />y grandes obras",
+    desc: "",
+    align: "center",
+    buttonText: "COTIZAR"
   },
   {
     image: "/images/servicios-integrales.png",
-    subtitle: "SOLUCIONES INTEGRALES · EQUIPOS MODERNOS",
-    title: "[TÍTULO PENDIENTE 2]",
-    desc: "[Información pendiente 2] Aquí puedes colocar el segundo mensaje o beneficio de la empresa."
+    subtitle: "",
+    title: "Comprometidos con<br />nuestros clientes",
+    desc: "Brindamos Certificado de Calidad<br />de nuestro concreto.",
+    align: "left",
+    buttonText: "Más información"
   },
   {
     image: "/images/concreto-premezclado.png",
-    subtitle: "ASESORÍA TÉCNICA · CONTROL DE CALIDAD",
-    title: "[TÍTULO PENDIENTE 3]",
-    desc: "[Información pendiente 3] Aquí puedes colocar el tercer mensaje para tus clientes."
+    subtitle: "CALIDAD Y PUNTUALIDAD",
+    title: "La base sólida para<br />el éxito de tu proyecto",
+    desc: "Garantizamos despachos exactos y mezclas diseñadas a la medida.",
+    align: "center",
+    buttonText: "COTIZAR"
   }
 ];
 
@@ -56,7 +62,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 5000);
+    }, 6000); // 6 segundos es un poco más suave
     return () => clearInterval(timer);
   }, []);
 
@@ -70,7 +76,7 @@ export default function Home() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
               index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
@@ -78,56 +84,51 @@ export default function Home() {
               src={slide.image}
               alt="Famax Concreto Perú"
               fill
-              className="object-cover object-center"
+              className={`object-cover object-center transition-transform duration-[7000ms] ease-out ${
+                index === currentSlide ? "scale-100" : "scale-[1.15]"
+              }`}
               priority={index === 0}
               quality={100}
             />
-            {/* Overlay para garantizar legibilidad */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-10" />
+            {/* Overlay sutil para legibilidad, similar al del video */}
+            <div className={`absolute inset-0 ${slide.align === 'left' ? 'bg-gradient-to-r from-black/50 via-black/20 to-transparent' : 'bg-black/20'} z-10`} />
             
-            <div className="container-custom relative z-20 text-left w-full h-full flex items-center">
-              <div className={`max-w-4xl mt-8 sm:mt-0 px-1 transition-all duration-1000 transform ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                <h2 className="text-xs sm:text-sm md:text-lg font-bold uppercase mb-3 text-white tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] leading-snug">
-                  {slide.subtitle}
-                </h2>
+            <div className="container-custom relative z-20 w-full h-full flex items-center">
+              <div className={`w-full mt-8 sm:mt-0 transition-all duration-1000 transform ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${slide.align === 'center' ? 'text-center mx-auto' : 'text-left'}`}>
+                
+                {slide.subtitle && (
+                  <h2 className={`text-xs sm:text-sm md:text-base font-bold mb-3 text-white tracking-[0.2em] drop-shadow-md ${slide.align === 'center' ? 'mx-auto' : ''}`}>
+                    {slide.subtitle}
+                  </h2>
+                )}
 
                 <h1 
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4 leading-[1.05] text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+                  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 leading-[1.05] text-white drop-shadow-xl ${slide.align === 'center' ? 'mx-auto' : 'max-w-4xl'}`}
                   dangerouslySetInnerHTML={{ __html: slide.title }}
                 />
 
-                <p className="text-sm sm:text-base md:text-lg text-gray-100 font-medium max-w-2xl mb-8 leading-relaxed drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                  {slide.desc}
-                </p>
+                {slide.desc && (
+                  <p 
+                    className={`text-base sm:text-lg md:text-xl text-white font-medium mb-8 leading-relaxed drop-shadow-md ${slide.align === 'center' ? 'mx-auto max-w-2xl' : 'max-w-xl'}`}
+                    dangerouslySetInnerHTML={{ __html: slide.desc }}
+                  />
+                )}
 
                 <Link
                   href="/contacto"
-                  className="inline-block bg-[#AD131B] hover:bg-[#8B0000] text-white px-7 sm:px-10 py-3.5 sm:py-4 rounded-xl font-black text-sm sm:text-base md:text-lg uppercase transition-all shadow-lg hover:-translate-y-1"
+                  className={`inline-flex items-center gap-3 bg-[#E50019] hover:bg-[#CC0016] text-white pl-6 md:pl-8 pr-2 py-2 rounded-full font-bold text-sm md:text-lg transition-all shadow-xl group ${slide.align === 'center' && !slide.desc ? 'mt-4' : ''}`}
                 >
-                  COTIZAR AHORA
+                  <span>{slide.buttonText}</span>
+                  <div className="bg-white text-[#E50019] p-2 rounded-full group-hover:bg-gray-100 transition-colors">
+                    <ChevronRight size={20} strokeWidth={3.5} className="ml-0.5" />
+                  </div>
                 </Link>
               </div>
             </div>
           </div>
         ))}
 
-        {/* Controles del Carrusel (Flechas) */}
-        <button 
-          onClick={prevSlide}
-          className="absolute left-2 sm:left-4 md:left-10 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-black/40 text-white hover:bg-[#AD131B] transition-all opacity-70 sm:opacity-0 sm:group-hover:opacity-100"
-          aria-label="Anterior"
-        >
-          <ChevronLeft size={24} className="sm:hidden" />
-          <ChevronLeft size={36} className="hidden sm:block" />
-        </button>
-        <button 
-          onClick={nextSlide}
-          className="absolute right-2 sm:right-4 md:right-10 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-black/40 text-white hover:bg-[#AD131B] transition-all opacity-70 sm:opacity-0 sm:group-hover:opacity-100"
-          aria-label="Siguiente"
-        >
-          <ChevronRight size={24} className="sm:hidden" />
-          <ChevronRight size={36} className="hidden sm:block" />
-        </button>
+
 
         {/* Indicadores (Puntos) */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
@@ -148,7 +149,7 @@ export default function Home() {
 
           {/* Título */}
           <div className="text-center mb-10 opacity-0 scroll-animate" data-animation="animate-slide-left">
-            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight mb-4">
               <span className="text-[#1A1A1A]">¿Por qué elegir a </span><span className="text-[#AD131B]">FAMAX</span><br />
               <span className="text-[#AD131B]">CONCRETO PERU?</span>
             </h2>
