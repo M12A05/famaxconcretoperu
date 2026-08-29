@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFAB from "@/components/ui/WhatsAppFAB";
+import FloatingBotCalculator from "@/components/ui/FloatingBotCalculator";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | FAMAX CONCRETO PERÚ",
   },
   icons: {
-    icon: "/images/famax-icon.png",
+    icon: "/images/famax-icon.webp",
   },
   description:
     "Empresa peruana especialista en concreto premezclado, adoquines, cachacos y baldosas en Lima Norte. 6 años de experiencia, laboratorio propio y entrega puntual. ¡Cotiza ahora!",
@@ -111,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <FloatingBotCalculator />
         <WhatsAppFAB />
       </body>
     </html>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Truck, ArrowRight, Factory, ShieldCheck, ArrowUpFromLine, LayoutGrid, Layers, HardHat, Calculator, ChevronRight } from "lucide-react";
+import { Truck, ArrowRight, Factory, ShieldCheck, ArrowUpFromLine, LayoutGrid, Wrench, CheckCircle } from "lucide-react";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
@@ -11,13 +11,14 @@ export default function Home() {
       <HeroCarousel />
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-[#FBF9F8]">
+      <section className="py-16 bg-white">
         <div className="container-custom">
 
           {/* Título */}
           <div className="text-center mb-10 opacity-0 scroll-animate" data-animation="animate-slide-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight mb-4">
-              <span className="text-[#1A1A1A]">¿Por qué elegir a </span><span className="text-[#AD131B]">FAMAX</span><br />
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight mb-4">
+              <span className="text-[#1A1A1A]">¿Por qué elegir a </span>
+              <span className="text-[#AD131B]">FAMAX</span><br />
               <span className="text-[#AD131B]">CONCRETO PERU?</span>
             </h2>
             <div className="w-14 h-[3px] bg-[#AD131B] mx-auto"></div>
@@ -63,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Products Preview */}
-      <section className="py-16 bg-[#F3F1F1]">
+      <section className="py-16 bg-[#FBF9F8]">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-200 relative pb-3 opacity-0 scroll-animate" data-animation="animate-fade-in">
             <div>
@@ -80,9 +81,10 @@ export default function Home() {
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
               {/* Imagen de fondo */}
               <Image
-                src="/images/concreto-premezclado.png"
+                src="/images/concreto-premezclado.webp"
                 alt="Concreto Premezclado FAMAX"
                 fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
                 quality={85}
               />
@@ -111,7 +113,7 @@ export default function Home() {
 
             {/* Tarjeta 2: Adoquines de Concreto */}
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
-              <Image src="/images/adoquines.png" alt="Adoquines de Concreto FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
+              <Image src="/images/adoquines.webp" alt="Adoquines de Concreto FAMAX" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
                 <h3 className="text-white text-center font-bold text-lg md:text-xl tracking-wide">Adoquines de Concreto</h3>
@@ -125,7 +127,7 @@ export default function Home() {
 
             {/* Tarjeta 3: Baldosas Podotáctiles */}
             <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-right delay-300">
-              <Image src="/images/catalogo/Baldosas Podotáctiles.png" alt="Baldosas Podotáctiles FAMAX" fill className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
+              <Image src="/images/catalogo/baldosas-podotactiles.webp" alt="Baldosas Podotáctiles FAMAX" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
                 <h3 className="text-white text-center font-bold text-lg md:text-xl tracking-wide">Baldosas Podotáctiles</h3>
@@ -140,67 +142,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 md:py-20 bg-[#FBF9F8]">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div className="order-2 lg:order-1 relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
-              <Image
-                src="/images/servicios-integrales.png"
-                alt="Planta de concreto y equipos de FAMAX CONCRETO PERÚ en Puente Piedra"
-                fill
-                className="object-cover object-center"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/40 to-transparent"></div>
-            </div>
+      {/* Servicios Integrales (Cuadrícula sobre fondo oscuro) */}
+      <section className="py-16 md:py-24 bg-[#1A1A1A] relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/catalogo/imagen-de-servicios.webp"
+            alt="Servicios FAMAX"
+            fill
+            sizes="100vw"
+            className="object-cover object-center opacity-10"
+            quality={80}
+          />
+        </div>
 
-            <div className="order-1 lg:order-2 opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
-              <div className="mb-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-[2px] bg-[#AD131B]" />
-                  <span className="text-[#AD131B] font-bold uppercase tracking-widest text-[11px]">Nuestro Soporte Operativo</span>
+        <div className="container-custom relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
+            <p className="text-xs font-bold uppercase tracking-widest text-white mb-3">Nuestro Soporte Operativo</p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight mb-4">
+              Servicios Integrales para Grandes Obras
+            </h2>
+            <div className="w-14 h-[3px] bg-[#AD131B] mx-auto" />
+          </div>
+
+          {/* Grid de tarjetas sólidas blancas estilo rectángulos anchos (Más pequeñas) */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-12">
+            {[
+              { name: "Alquiler de Camiones Mixer", icon: <Truck size={28} strokeWidth={1.5} /> },
+              { name: "Bombeo de Concreto", icon: <ArrowUpFromLine size={28} strokeWidth={1.5} /> },
+              { name: "Asesoría Técnica y Cubicaje", icon: <Wrench size={28} strokeWidth={1.5} /> },
+              { name: "Control de Calidad y Ensayos", icon: <CheckCircle size={28} strokeWidth={1.5} /> },
+              { name: "Instalación de Adoquines", icon: <LayoutGrid size={28} strokeWidth={1.5} /> },
+              { name: "Instalación de Baldosas Podotáctiles", icon: <LayoutGrid size={28} strokeWidth={1.5} /> },
+            ].map((s, i) => (
+              <div key={i} className={`bg-white rounded-xl flex flex-col items-center justify-center p-4 sm:p-6 gap-3 hover:shadow-lg transition-all duration-300 opacity-0 scroll-animate hover:-translate-y-1`} data-animation={`animate-fade-up delay-${((i % 3) + 1) * 100}`}>
+                <div className="text-[#AD131B]">
+                  {s.icon}
                 </div>
-                <h2 className="text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mb-3 tracking-tight leading-tight">
-                  SERVICIOS INTEGRALES
-                </h2>
-                <p className="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
-                  Más allá de suministrar concreto, brindamos soporte operativo y control técnico integral para asegurar el éxito y la resistencia de su proyecto desde el inicio hasta el fin del vaciado.
-                </p>
+                <p className="text-[#1A1A1A] font-bold uppercase text-[10px] md:text-xs text-center tracking-widest leading-snug">{s.name}</p>
               </div>
+            ))}
+          </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                {[
-                  { title: "Bombeo Estacionario y Telescópico", icon: <ArrowUpFromLine size={20} /> },
-                  { title: "Alquiler de Camiones Mixers", icon: <Truck size={20} /> },
-                  { title: "Instalación de Baldosas Podotáctiles", icon: <LayoutGrid size={20} /> },
-                  { title: "Instalación de Adoquines", icon: <Layers size={20} /> },
-                  { title: "Asesoría Técnica Especializada", icon: <HardHat size={20} /> },
-                  { title: "Cubicaje Exacto en Obra", icon: <Calculator size={20} /> },
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-[#AD131B]/40 transition-all group cursor-default">
-                    <div className="text-[#AD131B] bg-red-50 p-2.5 rounded-lg group-hover:bg-[#AD131B] group-hover:text-white transition-colors duration-300">
-                      {item.icon}
-                    </div>
-                    <p className="text-sm md:text-sm font-bold text-[#1A1A1A] leading-tight pt-1.5 pr-2">
-                      {item.title}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/contacto"
-                className="inline-block w-full md:w-auto text-center bg-[#AD131B] hover:bg-[#8B0000] text-white px-8 py-3.5 rounded-xl font-bold text-sm uppercase transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-              >
-                SOLICITAR COTIZACIÓN DE SERVICIOS
-              </Link>
-            </div>
+          <div className="text-center opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
+            <Link
+              href="/productos-y-servicios"
+              className="inline-block bg-[#AD131B] hover:bg-[#8B0000] text-white px-10 py-4 rounded-xl font-black uppercase text-sm tracking-wide transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+            >
+              VER SERVICIOS
+            </Link>
           </div>
         </div>
       </section>
+
       {/* Proyectos Ejecutados */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#FBF9F8]">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-14 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
             <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Proyectos Ejecutados</h2>
@@ -209,12 +204,12 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "Pavimentación Industrial", img: "/images/adoquines.png" },
-              { title: "Losa Deportiva Puente Piedra", img: "/images/concreto-premezclado.png" },
-              { title: "Cimentación Edificio Residencial", img: "/images/servicios-integrales.png" }
+              { title: "Pavimentación Industrial", img: "/images/adoquines.webp" },
+              { title: "Losa Deportiva Puente Piedra", img: "/images/concreto-premezclado.webp" },
+              { title: "Cimentación Edificio Residencial", img: "/images/servicios-integrales.webp" }
             ].map((proj, i) => (
               <div key={i} className={`group relative h-64 rounded-xl overflow-hidden shadow-sm opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
-                <Image src={proj.img} alt={proj.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                <Image src={proj.img} alt={proj.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-5">
                   <h3 className="text-white font-bold text-lg">{proj.title}</h3>
@@ -225,34 +220,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonios */}
-      <section className="py-16 bg-[#FBF9F8]">
+      {/* Clientes que confían en nosotros (Marquee) */}
+      <section className="py-16 bg-white overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-14 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
-            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Lo que dicen nuestros clientes</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Clientes que confían en nosotros</h2>
             <div className="w-16 h-[3px] bg-[#AD131B] mx-auto mb-5" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
-              <p className="text-gray-600 font-medium italic mb-6">"Excelente servicio. Necesitaba 20 cubos para la cimentación de mi proyecto y llegaron exactos a la hora pactada. El certificado de calidad nos dio mucha tranquilidad."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center text-gray-500 font-bold">JC</div>
-                <div>
-                  <p className="font-bold text-[#1A1A1A]">Ing. Javier Cáceres</p>
-                  <p className="text-xs text-gray-500 uppercase">Constructora JC</p>
-                </div>
+        </div>
+
+        {/* Contenedor del Carrusel Infinito */}
+        <div className="relative w-full flex overflow-hidden">
+          {/* Capas de gradiente para suavizar los bordes */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+          <div className="flex w-max animate-marquee-scroll hover:[animation-play-state:paused]">
+            {/* Duplicamos el array para lograr el scroll infinito sin cortes */}
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex gap-8 md:gap-12 px-4 md:px-6 items-center">
+                {[
+                  { name: "Municipalidad de Magdalena del Mar", img: "/images/clientes/muni-magdalena.webp" },
+                  { name: "Municipalidad de San Isidro", img: "/images/clientes/muni-san-isidro.webp" },
+                  { name: "Municipalidad del Callao", img: "/images/clientes/muni-callao.webp" },
+                  { name: "Municipalidad de Ventanilla", img: "/images/clientes/muni-ventanilla.webp" },
+                  { name: "Municipalidad de Comas", img: "/images/clientes/muni-comas.webp" },
+                  { name: "Municipalidad de San Martín de Porres", img: "/images/clientes/muni-smp.webp" },
+                ].map((client, idx) => (
+                  <div key={idx} className="flex flex-col items-center justify-center w-[200px] md:w-[240px] lg:w-[260px] shrink-0 gap-3 md:gap-4 cursor-pointer group">
+                    <div className="relative w-full h-32 md:h-40 transition-transform duration-300 group-hover:scale-105">
+                      <Image
+                        src={client.img}
+                        alt={client.name}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 20vw"
+                        className="object-contain drop-shadow-sm"
+                      />
+                    </div>
+                    <span className="text-sm md:text-base font-bold text-gray-800 text-center w-full whitespace-normal leading-snug transition-colors duration-300 group-hover:text-[#AD131B]">
+                      {client.name}
+                    </span>
+                  </div>
+                ))}
               </div>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
-              <p className="text-gray-600 font-medium italic mb-6">"Primera vez que construyo mi casa y el equipo de FAMAX me asesoró en todo. La bomba telescópica facilitó el vaciado del segundo piso enormemente."</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center text-gray-500 font-bold">MR</div>
-                <div>
-                  <p className="font-bold text-[#1A1A1A]">María Rojas</p>
-                  <p className="text-xs text-gray-500 uppercase">Propietaria</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

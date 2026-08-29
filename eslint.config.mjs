@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scripts de utilidad legados (no parte de la app)
+    "copy-images.js",
+    "copy-quienes.js",
   ]),
 ]);
 

@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/hero.png",
+    image: "/images/hero.webp",
     subtitle: "",
     title: "Concreto para pequeñas<br />y grandes obras",
     desc: "",
@@ -15,7 +15,7 @@ const slides = [
     buttonText: "COTIZAR"
   },
   {
-    image: "/images/servicios-integrales.png",
+    image: "/images/servicios-integrales.webp",
     subtitle: "",
     title: "Comprometidos con<br />nuestros clientes",
     desc: "Brindamos Certificado de Calidad<br />de nuestro concreto.",
@@ -23,7 +23,7 @@ const slides = [
     buttonText: "Más información"
   },
   {
-    image: "/images/concreto-premezclado.png",
+    image: "/images/concreto-premezclado.webp",
     subtitle: "CALIDAD Y PUNTUALIDAD",
     title: "La base sólida para<br />el éxito de tu proyecto",
     desc: "Garantizamos despachos exactos y mezclas diseñadas a la medida.",
@@ -91,7 +91,7 @@ export default function HeroCarousel() {
 
   return (
     <section 
-      className="relative h-[90vh] sm:h-[85vh] min-h-[600px] flex items-center justify-start overflow-hidden group"
+      className="relative h-[90vh] sm:h-[85vh] min-h-[520px] sm:min-h-[600px] flex items-center justify-start overflow-hidden group"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

@@ -1,7 +1,5 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
-
 export default function WhatsAppFAB() {
   const whatsappNumber = "51955416601";
   const defaultMessage = encodeURIComponent("Hola, me gustaría cotizar concreto premezclado.");
@@ -12,7 +10,7 @@ export default function WhatsAppFAB() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-xl hover:bg-[#128C7E] hover:scale-110 transition-all duration-300 group animate-pulse hover:animate-none"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-xl hover:bg-[#128C7E] hover:scale-110 transition-all duration-300 group"
       aria-label="Contactar por WhatsApp"
     >
       {/* Notificación Tooltip — solo visible en sm+ para evitar desbordamiento */}

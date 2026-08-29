@@ -18,13 +18,19 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background-white border-b border-border shadow-sm">
+    <>
+      {pathname === "/" && (
+        <div className="w-full bg-[#1A1A1A] text-gray-300 py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide hidden sm:block">
+          Especialistas en producción, transporte, bombeo y control de calidad del concreto premezclado
+        </div>
+      )}
+      <header className="sticky top-0 z-50 w-full bg-background-white border-b border-border shadow-sm">
       <div className="container-custom mx-auto h-20 md:h-24 flex items-center justify-between">
         {/* Logo */}
         <div className="flex justify-start">
           <Link href="/" className="flex items-center gap-2 shrink-0 -ml-2 lg:-ml-6">
             <Image
-              src="/images/famax-icon.png"
+              src="/images/famax-icon.webp"
               alt="FAMAX CONCRETO PERÚ Logo"
               width={240}
               height={70}
@@ -105,5 +111,6 @@ export default function Navbar() {
         </div>
       )}
     </header>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, Target, Eye, Building2, FlaskConical, Wrench } from "lucide-react";
+import { Target, Eye, Building2, FlaskConical, Wrench } from "lucide-react";
 import type { Metadata } from "next";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
@@ -44,7 +44,7 @@ export default function NosotrosPage() {
             {/* Imagen */}
             <div className="relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <Image
-                src="/images/quienes-somos.png"
+                src="/images/quienes-somos.webp"
                 alt="Equipo de FAMAX CONCRETO PERÚ"
                 fill
                 className="object-cover object-center"

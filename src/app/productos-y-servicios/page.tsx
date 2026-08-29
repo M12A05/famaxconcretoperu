@@ -20,54 +20,78 @@ const products = [
   {
     icon: <Wrench size={24} strokeWidth={1.5} />,
     name: "Concreto Premezclado",
-    image: "/images/catalogo/Concreto Premezclado.png",
+    image: "/images/catalogo/concreto-premezclado.webp",
     desc: "Elaborado con cemento UNACEM, agregados premium y aditivo \"Quincha\" para máxima resistencia.",
     bullets: ["Dosificaciones: HS 175, HS 210, HS 315", "Dosificaciones: f'c 175, f'c 210"],
   },
   {
     icon: <Blocks size={24} strokeWidth={1.5} />,
     name: "Adoquines de Concreto",
-    image: "/images/catalogo/Adoquines de Concreto.png",
+    image: "/images/catalogo/adoquines-de-concreto.webp",
     desc: "Alta resistencia y larga durabilidad. Ideales para pisos, veredas y playas de estacionamiento de alto tránsito.",
     bullets: [],
   },
   {
     icon: <Cone size={24} strokeWidth={1.5} />,
     name: "Cachacos de Concreto",
-    image: "/images/catalogo/Cachacos de Concreto.png",
+    image: "/images/catalogo/cachacos-de-concreto.webp",
     desc: "Medidas estándar enfocadas en la seguridad vial, delimitación de espacios y protección de perímetros.",
     bullets: [],
   },
   {
     icon: <PersonStanding size={24} strokeWidth={1.5} />,
     name: "Baldosas Podotáctiles",
-    image: "/images/catalogo/Baldosas Podotáctiles.png",
+    image: "/images/catalogo/baldosas-podotactiles.webp",
     desc: "Diseñadas para señalización de accesibilidad en proyectos urbanos e industriales según normativa vigente.",
     bullets: [],
   },
   {
     icon: <Tractor size={24} strokeWidth={1.5} />,
     name: "Alquiler de Maquinaria Pesada",
-    image: "/images/catalogo/Alquiler de Maquinaria Pesada.png",
+    image: "/images/catalogo/alquiler-de-maquinaria-pesada.webp",
     desc: "Equipos operativos para movimiento de tierras, carga y apoyo logístico en obra, garantizando rendimiento continuo.",
     bullets: [],
   },
   {
     icon: <Drill size={24} strokeWidth={1.5} />,
     name: "Bombeo de Concreto con Pluma",
-    image: "/images/catalogo/Bombeo de Concreto con Pluma.png",
+    image: "/images/catalogo/bombeo-de-concreto-con-pluma.webp",
     desc: "Vaciado en altura mediante camión con brazo articulado. Ideal para losas y techos de difícil acceso.",
     bullets: [],
   },
 ];
 
 const services = [
-  { name: "Alquiler Camión Mezcladora (Mixer)", icon: <Tractor size={28} strokeWidth={1.5} /> },
-  { name: "Servicio de Bombeo de Concreto", icon: <Drill size={28} strokeWidth={1.5} /> },
-  { name: "Asesoría Técnica y Cubicaje en Obra", icon: <Wrench size={28} strokeWidth={1.5} /> },
-  { name: "Servicio de Control de Calidad", icon: <CheckCircle2 size={28} strokeWidth={1.5} /> },
-  { name: "Ensayos y Certificación de Resistencia", icon: <FlaskConical size={28} strokeWidth={1.5} /> },
-  { name: "Instalación de Adoquines y Podotáctiles", icon: <Blocks size={28} strokeWidth={1.5} /> },
+  { 
+    name: "Alquiler Camión Mezcladora (Mixer)", 
+    icon: <Tractor size={32} strokeWidth={1.5} />,
+    desc: "Flota moderna con capacidad óptima para el transporte continuo y seguro de concreto premezclado."
+  },
+  { 
+    name: "Servicio de Bombeo de Concreto", 
+    icon: <Drill size={32} strokeWidth={1.5} />,
+    desc: "Equipos estacionarios y telescópicos para vaciados en altura o de difícil acceso con alta eficiencia."
+  },
+  { 
+    name: "Asesoría Técnica y Cubicaje en Obra", 
+    icon: <Wrench size={32} strokeWidth={1.5} />,
+    desc: "Ingenieros especialistas evalúan su proyecto in-situ para optimizar los volúmenes y diseños de mezcla."
+  },
+  { 
+    name: "Servicio de Control de Calidad", 
+    icon: <CheckCircle2 size={32} strokeWidth={1.5} />,
+    desc: "Rigurosas pruebas en campo (Slump) para asegurar la trabajabilidad y fluidez del concreto antes del vaciado."
+  },
+  { 
+    name: "Ensayos y Certificación de Resistencia", 
+    icon: <FlaskConical size={32} strokeWidth={1.5} />,
+    desc: "Rotura de probetas en laboratorio para garantizar que el nivel estructural cumple con las normativas."
+  },
+  { 
+    name: "Instalación de Adoquines y Podotáctiles", 
+    icon: <Blocks size={32} strokeWidth={1.5} />,
+    desc: "Personal calificado para pavimentación exterior asegurando durabilidad, estética y accesibilidad."
+  },
 ];
 
 export default function ProductosServiciosPage() {
@@ -86,7 +110,7 @@ export default function ProductosServiciosPage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/catalogo/Imagen portada.png"
+            src="/images/catalogo/imagen-portada.webp"
             alt="Catálogo de Productos y Servicios Famax"
             fill
             className="object-cover object-center"
@@ -128,6 +152,7 @@ export default function ProductosServiciosPage() {
                     src={product.image}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     quality={85}
                   />
@@ -168,7 +193,7 @@ export default function ProductosServiciosPage() {
       <section className="py-16 bg-[#1A1A1A] relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/catalogo/Imagen de Servicios.png"
+            src="/images/catalogo/imagen-de-servicios.webp"
             alt="Servicios FAMAX"
             fill
             className="object-cover object-center opacity-10"
@@ -185,12 +210,16 @@ export default function ProductosServiciosPage() {
             <div className="w-14 h-[3px] bg-[#AD131B] mx-auto" />
           </div>
 
-          {/* Grid de tarjetas sólidas blancas */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mb-12">
+          {/* Grid de tarjetas sólidas blancas con descripción */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
             {services.map((s, i) => (
-              <div key={i} className={`bg-white rounded-xl flex flex-col items-center justify-center p-6 gap-3 hover:shadow-lg transition-all group opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${((i % 3) + 1) * 100}`}>
-                <div className="text-[#AD131B]">{s.icon}</div>
-                <p className="text-[#1A1A1A] font-bold uppercase text-xs md:text-sm text-center tracking-wide leading-snug">{s.name}</p>
+              <div key={i} className={`bg-white rounded-xl flex flex-col items-center text-center p-8 gap-4 hover:shadow-xl transition-all hover:-translate-y-1 group opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${((i % 3) + 1) * 100}`}>
+                <div className="text-[#AD131B] transform group-hover:scale-110 transition-transform duration-300">
+                  {s.icon}
+                </div>
+                <h3 className="text-[#1A1A1A] font-black uppercase text-sm md:text-base tracking-wide leading-snug group-hover:text-[#AD131B] transition-colors">{s.name}</h3>
+                <div className="w-10 h-[2px] bg-gray-200" />
+                <p className="text-gray-600 text-sm font-medium leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -206,34 +235,7 @@ export default function ProductosServiciosPage() {
         </div>
       </section>
 
-      {/* B2C Guide: ¿Qué concreto necesito? */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
-            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Guía de Autoconstrucción: ¿Qué concreto necesito?</h2>
-            <div className="w-16 h-[3px] bg-[#AD131B] mx-auto mb-5" />
-            <p className="text-gray-600 font-medium">Te ayudamos a elegir la resistencia ideal para la seguridad de tu hogar.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-[#FBF9F8] p-6 rounded-xl border border-gray-200 shadow-sm opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
-              <h3 className="text-xl font-black text-[#AD131B] mb-2">f'c 175 kg/cm²</h3>
-              <p className="font-bold text-[#1A1A1A] mb-2 uppercase text-sm">Veredas y Falsos Pisos</p>
-              <p className="text-gray-600 text-sm font-medium">Concreto básico ideal para superficies peatonales, estacionamientos ligeros o bases de nivelación donde no hay peso estructural.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl border-2 border-[#AD131B] shadow-md relative mt-4 md:mt-0 opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
-              <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-[#AD131B] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">El más usado</div>
-              <h3 className="text-xl font-black text-[#AD131B] mb-2">f'c 210 kg/cm²</h3>
-              <p className="font-bold text-[#1A1A1A] mb-2 uppercase text-sm">Techos, Vigas y Columnas</p>
-              <p className="text-gray-600 text-sm font-medium">El estándar obligatorio para la construcción de viviendas de hasta 3-4 pisos. Proporciona la seguridad estructural que tu familia necesita.</p>
-            </div>
-            <div className="bg-[#FBF9F8] p-6 rounded-xl border border-gray-200 shadow-sm opacity-0 scroll-animate" data-animation="animate-slide-right delay-300">
-              <h3 className="text-xl font-black text-[#AD131B] mb-2">f'c 280+ kg/cm²</h3>
-              <p className="font-bold text-[#1A1A1A] mb-2 uppercase text-sm">Zapatas y Edificios</p>
-              <p className="text-gray-600 text-sm font-medium">Concreto de alta resistencia. Obligatorio para cimientos profundos, edificios de más de 5 pisos o zonas con suelo muy salitroso.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Documentación */}
       <section className="py-16 bg-background">

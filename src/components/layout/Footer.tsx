@@ -49,25 +49,25 @@ export default function Footer() {
             <h3 className="text-sm text-white font-bold uppercase tracking-wider mb-6">Redes Sociales</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://www.facebook.com/famaxconcreto" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                   Facebook
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://www.instagram.com/famaxconcreto" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   Instagram
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://www.linkedin.com/company/famaxconcreto" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
+                <a href="https://www.tiktok.com/@famaxconcreto" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-white text-sm transition-colors">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
                   Tiktok
                 </a>
@@ -85,7 +85,7 @@ export default function Footer() {
             <h3 className="text-sm text-white font-bold uppercase tracking-wider mb-6">Legal</h3>
             <ul className="space-y-4 flex flex-col items-start">
               <li>
-                <Link href="/politica-de-privacidad" className="text-gray-300 hover:text-white text-sm transition-colors">
+                <Link href="/politicas-de-privacidad" className="text-gray-300 hover:text-white text-sm transition-colors">
                   Política de Privacidad
                 </Link>
               </li>

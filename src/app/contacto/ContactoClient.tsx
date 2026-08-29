@@ -4,7 +4,6 @@ import { useState } from "react";
 import { CheckCircle2, Phone, MapPin, MessageCircle, Mail } from "lucide-react";
 import type { FormEvent } from "react";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
-import ConcreteCalculator from "@/components/ui/ConcreteCalculator";
 
 const TIPOS_CONCRETO = [
   "f'c 140 kg/cm2", "f'c 175 kg/cm2", "f'c 210 kg/cm2",
@@ -189,15 +188,6 @@ export default function ContactoClient() {
         </div>
       </section>
 
-      {/* Calculadora Section */}
-      <section className="py-16 bg-[#FBF9F8]">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto opacity-0 scroll-animate" data-animation="animate-fade-up delay-100">
-            <ConcreteCalculator />
-          </div>
-        </div>
-      </section>
-
       {/* Mapa */}
       <section className="bg-white pb-0">
         <div className="container-custom">
@@ -214,7 +204,7 @@ export default function ContactoClient() {
         </div>
         <div className="w-full h-[400px] opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3823.5!2d-77.0763!3d-11.8705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf5b7a6d5555%3A0x5a6d5555a6d55555!2sFAMAX%20CONCRETO%20PERU!5e0!3m2!1ses!2spe!4v1"
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3823.5!2d-77.0763!3d-11.8705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFAMAX%20CONCRETO%20PERU%2C%20Puente%20Piedra!5e0!3m2!1ses!2spe!4v1"
             width="100%"
             height="400"
             style={{ border: 0 }}
