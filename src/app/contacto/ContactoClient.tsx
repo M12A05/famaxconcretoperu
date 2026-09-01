@@ -27,21 +27,14 @@ export default function ContactoClient() {
     setStatus("loading");
     setErrorMsg("");
     try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Error al enviar");
       setStatus("success");
       const msg = encodeURIComponent(
         `Hola FAMAX, quiero cotizar:\n• Nombre/Empresa: ${form.nombre}\n• RUC/DNI: ${form.ruc_dni}\n• Tipo de Concreto: ${form.tipo_concreto}\n• Volumen: ${form.volumen} m³\n• Ubicación: ${form.ubicacion}\n• Tipo de Vaciado: ${form.tipo_vaciado}`
       );
-      window.open(`https://wa.me/51955416601?text=${msg}`, "_blank");
+      window.open(`https://wa.me/51973350524?text=${msg}`, "_blank");
     } catch (err: unknown) {
       setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Error desconocido");
+      setErrorMsg("Error desconocido");
     }
   };
 
@@ -76,7 +69,6 @@ export default function ContactoClient() {
                   <div>
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Teléfono</h3>
                     <p className="text-gray-600 font-medium">973 350 524</p>
-                    <p className="text-gray-600 font-medium">933 595 630</p>
                   </div>
                 </div>
 
@@ -88,7 +80,7 @@ export default function ContactoClient() {
                   <div>
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Contacto Online</h3>
                     <p className="text-gray-600 font-medium">Ventas y Asesoría Técnica</p>
-                    <a href="https://wa.me/51955416601" target="_blank" rel="noopener noreferrer" className="text-[#AD131B] font-bold hover:underline transition-colors mt-1 inline-block">
+                    <a href="https://wa.me/51973350524" target="_blank" rel="noopener noreferrer" className="text-[#AD131B] font-bold hover:underline transition-colors mt-1 inline-block">
                       WhatsApp General
                     </a>
                   </div>
@@ -113,7 +105,7 @@ export default function ContactoClient() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Correo Electrónico</h3>
-                    <p className="text-gray-600 font-medium">ventas@famaxconcreto.com</p>
+                    <p className="text-gray-600 font-medium">famax@grupoconstructores.com</p>
                   </div>
                 </div>
               </div>

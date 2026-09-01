@@ -96,7 +96,7 @@ const services = [
 
 export default function ProductosServiciosPage() {
   const whatsappMsg = encodeURIComponent(
-    "Hola, me gustaría cotizar. Adjunto mis datos:\n• Volumen estimado en m3:\n• Ubicación exacta del proyecto:\n• RUC o DNI:\n• Tipo de producto o servicio:"
+    "Hola, me gustaría solicitar una cotización. \nLes comparto los datos de mi proyecto:\n\n- Volumen estimado:    m³\n- Ubicación del proyecto: \n- Producto o servicio requerido: \n- Tipo de vaciado: \n\nQuedo atento a su cotización. ¡Muchas gracias! "
   );
   const whatsappUrl = `https://wa.me/51955416601?text=${whatsappMsg}`;
 
@@ -110,14 +110,16 @@ export default function ProductosServiciosPage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/catalogo/imagen-portada.webp"
+            src="/images/catalogo/imagenportada-nueva.jpg"
             alt="Catálogo de Productos y Servicios Famax"
             fill
             className="object-cover object-center"
+            style={{ filter: "contrast(1.08) saturate(1.1) brightness(1.02)" }}
             priority
+            quality={100}
           />
-          {/* Gradiente oscuro a la izquierda que se desvanece rápido hacia la derecha */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-transparent lg:to-transparent lg:via-black/20 z-10" />
+          {/* Gradiente: izquierda oscura hasta la mitad → derecha clara */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent lg:to-black/10 z-10" />
         </div>
 
         <div className="container-custom relative z-20 text-white w-full text-left">
@@ -145,18 +147,19 @@ export default function ProductosServiciosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {products.map((product, i) => (
-              <div key={i} className={`bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 flex flex-col group opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${((i % 3) + 1) * 100}`}>
-                {/* Imagen del Producto */}
-                <div className="relative h-44 w-full overflow-hidden">
+              <div key={i} className={`bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col group opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${((i % 3) + 1) * 100}`}>
+
+                {/* Imagen del Producto — más alta, con overlay hover */}
+                <div className="relative h-56 w-full overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                    quality={85}
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    quality={92}
                   />
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-black/20 transition-colors duration-300"></div>
+                  {/* Sin overlay de texto — la info ya está en la tarjeta */}
                 </div>
 
                 <div className="p-5 flex flex-col flex-grow">
@@ -176,7 +179,7 @@ export default function ProductosServiciosPage() {
                   )}
                 </div>
 
-                {/* Botón pegado al borde inferior (estilo bloque) */}
+                {/* Botón pegado al borde inferior */}
                 <Link
                   href="/contacto"
                   className="block w-full text-center bg-[#8B0000] hover:bg-[#5E0000] text-white py-3.5 font-bold text-xs md:text-sm uppercase tracking-wide transition-colors"
@@ -249,20 +252,12 @@ export default function ProductosServiciosPage() {
             </div>
             <div className="flex flex-col gap-4 opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <a
-                href="/ficha-tecnica-concreto.pdf"
+                href="https://drive.google.com/drive/folders/12VpAMbMSi7PseQDL6UlJVcs1WBNqHZwf?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-[#1A1A1A] hover:bg-black text-white py-3.5 px-8 rounded-xl font-bold uppercase text-xs md:text-sm transition-all shadow-md hover:shadow-lg"
+                className="flex items-center justify-center gap-3 bg-[#1A1A1A] hover:bg-black text-white py-4 px-8 rounded-xl font-bold uppercase text-xs md:text-sm transition-all shadow-md hover:shadow-lg"
               >
-                <FileText size={18} /> Descargar Ficha Técnica de Concreto (PDF)
-              </a>
-              <a
-                href="/protocolo-laboratorio.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-white border border-[#1A1A1A] text-[#1A1A1A] hover:bg-gray-50 py-3.5 px-8 rounded-xl font-bold uppercase text-xs md:text-sm transition-all shadow-sm"
-              >
-                <FileDown size={18} /> Ver Protocolo de Laboratorio (PDF)
+                <FileText size={18} /> Descargar Ficha Técnica de Concreto (DRIVE)
               </a>
             </div>
           </div>
@@ -287,6 +282,7 @@ export default function ProductosServiciosPage() {
               "Ubicación exacta del proyecto",
               "RUC o DNI para facturación",
               "Tipo de producto o servicio requerido",
+              "Tipo de vaciado",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 text-white mb-4 last:mb-0">
                 <CheckCircle2 size={18} className="text-white shrink-0" />

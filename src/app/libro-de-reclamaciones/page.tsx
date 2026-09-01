@@ -60,7 +60,7 @@ export default function LibroReclamacionesPage() {
                 <Mail className="text-[#AD131B] shrink-0" size={20} />
                 <div>
                   <p className="font-bold text-[#1A1A1A] uppercase tracking-wide text-xs">Correo</p>
-                  <p className="text-gray-600 font-medium">ventas@famaxconcreto.com</p>
+                  <p className="text-gray-600 font-medium">famax@grupoconstructores.com</p>
                 </div>
               </div>
             </div>
@@ -108,12 +108,10 @@ export default function LibroReclamacionesPage() {
             </div>
 
             <a
-              href="https://wa.me/51955416601"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:famax@grupoconstructores.com?subject=Nuevo%20Reclamo%2FQueja%20-%20Libro%20de%20Reclamaciones"
               className="inline-flex items-center gap-3 bg-[#AD131B] hover:bg-[#8B0000] text-white px-8 py-4 rounded-lg font-black uppercase text-sm tracking-wide transition-colors shadow-md"
             >
-              <FileText size={18} /> Enviar Reclamo por WhatsApp
+              <Mail size={18} /> ENVIAR RECLAMO
             </a>
             <p className="text-xs text-gray-500 mt-4 flex items-center gap-2">
               <CheckCircle2 size={14} className="text-green-500" />

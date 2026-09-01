@@ -66,8 +66,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     description:
       "Empresa peruana especializada en producción, suministro y logística integral de concreto premezclado y prefabricados en Lima Norte.",
     url: BASE_URL,
-    telephone: ["+51973350524", "+51933595630", "+51955416601"],
-    email: "ventas@famaxconcreto.com",
+    telephone: ["+51973350524"],
+    email: "famax@grupoconstructores.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "5VFR+822",

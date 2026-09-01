@@ -66,9 +66,9 @@ export default function LineaEticaPage() {
               <div>
                 <h2 className="text-xl font-bold text-[#1A1A1A] mb-2">Puedes reportar por:</h2>
                 <ul className="space-y-2 text-gray-600 text-sm md:text-base font-medium">
-                  <li>• Correo: <span className="text-[#AD131B] font-bold">lineaetica@famaxconcreto.com</span></li>
-                  <li>• WhatsApp confidencial: <span className="text-[#AD131B] font-bold">+51 955 416 601</span></li>
-                  <li>• Correo general: <span className="text-[#AD131B] font-bold">ventas@famaxconcreto.com</span></li>
+                  <li>• Correo: <span className="text-[#AD131B] font-bold">famax@grupoconstructores.com</span></li>
+                  <li>• WhatsApp confidencial: <span className="text-[#AD131B] font-bold">+51 973 350 524</span></li>
+                  <li>• Correo general: <span className="text-[#AD131B] font-bold">famax@grupoconstructores.com</span></li>
                 </ul>
               </div>
             </div>

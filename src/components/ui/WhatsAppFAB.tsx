@@ -1,7 +1,7 @@
 "use client";
 
 export default function WhatsAppFAB() {
-  const whatsappNumber = "51955416601";
+  const whatsappNumber = "51973350524";
   const defaultMessage = encodeURIComponent("Hola, me gustaría cotizar concreto premezclado.");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
 

@@ -44,12 +44,14 @@ export default function NosotrosPage() {
             {/* Imagen */}
             <div className="relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <Image
-                src="/images/quienes-somos.webp"
+                src="/images/grupogeneral.jpg"
                 alt="Equipo de FAMAX CONCRETO PERÚ"
                 fill
                 className="object-cover object-center"
                 quality={90}
               />
+              {/* Toque oscuro sutil */}
+              <div className="absolute inset-0 bg-black/0 rounded-2xl" />
             </div>
           </div>
         </div>
@@ -115,14 +117,15 @@ export default function NosotrosPage() {
             ].map((item, i) => {
               const animationDelays = ["animate-slide-left", "animate-fade-up", "animate-slide-right"];
               return (
-              <div key={i} className={`bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group opacity-0 scroll-animate`} data-animation={`${animationDelays[i]} delay-${(i + 1) * 100}`}>
-                <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#AD131B] transition-colors duration-300">
-                  <div className="text-[#AD131B] group-hover:text-white transition-colors duration-300">{item.icon}</div>
+                <div key={i} className={`bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group opacity-0 scroll-animate`} data-animation={`${animationDelays[i]} delay-${(i + 1) * 100}`}>
+                  <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#AD131B] transition-colors duration-300">
+                    <div className="text-[#AD131B] group-hover:text-white transition-colors duration-300">{item.icon}</div>
+                  </div>
+                  <h3 className="font-bold uppercase text-xs md:text-sm tracking-wider text-[#1A1A1A] mb-2">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-xs md:text-sm font-medium">{item.desc}</p>
                 </div>
-                <h3 className="font-bold uppercase text-xs md:text-sm tracking-wider text-[#1A1A1A] mb-2">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-xs md:text-sm font-medium">{item.desc}</p>
-              </div>
-            )})}
+              )
+            })}
           </div>
         </div>
       </section>

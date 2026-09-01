@@ -20,8 +20,14 @@ export default function Navbar() {
   return (
     <>
       {pathname === "/" && (
-        <div className="w-full bg-[#1A1A1A] text-gray-300 py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide hidden sm:block">
-          Especialistas en producción, transporte, bombeo y control de calidad del concreto premezclado
+        <div className="w-full bg-[#1A1A1A] text-gray-300 py-2.5 overflow-hidden hidden sm:flex">
+          <div className="animate-marquee-topbar flex gap-12 sm:gap-32 px-6 sm:px-16">
+            <span className="text-xs md:text-sm font-medium tracking-wide">Especialistas en producción, transporte, bombeo y control de calidad del concreto premezclado</span>
+            <span className="text-xs md:text-sm font-medium tracking-wide">Especialistas en producción, transporte, bombeo y control de calidad del concreto premezclado</span>
+            {/* Duplicados para que el scroll sea infinito y sin cortes */}
+            <span className="text-xs md:text-sm font-medium tracking-wide">Especialistas en producción, transporte, bombeo y control de calidad del concreto premezclado</span>
+            <span className="text-xs md:text-sm font-medium tracking-wide">Especialistas en producción, transporte, bombeo y control de calidad del concreto premezclado</span>
+          </div>
         </div>
       )}
       <header className="sticky top-0 z-50 w-full bg-background-white border-b border-border shadow-sm">

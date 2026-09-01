@@ -113,3 +113,35 @@ html {
 .animate-marquee-scroll {
   animation: marquee-scroll 30s linear infinite;
 }
+
+/* Carrusel de testimonios — más lento */
+.animate-marquee-testimonios {
+  animation: marquee-scroll 55s linear infinite;
+}
+
+/* Pausa al hover en el contenedor padre */
+.marquee-wrapper:hover .animate-marquee-testimonios {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-topbar {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.animate-marquee-topbar {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee-topbar 30s linear infinite;
+  will-change: transform;
+}
+
+@keyframes zoomOut {
+  from { transform: scale(1.15); }
+  to { transform: scale(1); }
+}
+
+.animate-zoom-out {
+  animation: zoomOut 7s ease-out forwards;
+}

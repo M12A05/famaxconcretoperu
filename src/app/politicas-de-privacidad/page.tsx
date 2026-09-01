@@ -79,7 +79,7 @@ export default function PoliticasPage() {
             </p>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base font-medium">
               Para ejercer sus derechos o realizar consultas, contáctenos por correo a{" "}
-              <span className="text-[#AD131B] font-bold">ventas@famaxconcreto.com</span>.
+              <span className="text-[#AD131B] font-bold">famax@grupoconstructores.com</span>.
             </p>
           </div>
 

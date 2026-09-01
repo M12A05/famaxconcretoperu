@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/hero.webp",
+    image: "/images/fotoportada1.jpg",
     subtitle: "",
     title: "Concreto para pequeñas<br />y grandes obras",
     desc: "",
@@ -15,7 +15,7 @@ const slides = [
     buttonText: "COTIZAR"
   },
   {
-    image: "/images/servicios-integrales.webp",
+    image: "/images/fotoportada2.jpg",
     subtitle: "",
     title: "Comprometidos con<br />nuestros clientes",
     desc: "Brindamos Certificado de Calidad<br />de nuestro concreto.",
@@ -23,7 +23,7 @@ const slides = [
     buttonText: "Más información"
   },
   {
-    image: "/images/concreto-premezclado.webp",
+    image: "/images/fotoportada3.jpg",
     subtitle: "CALIDAD Y PUNTUALIDAD",
     title: "La base sólida para<br />el éxito de tu proyecto",
     desc: "Garantizamos despachos exactos y mezclas diseñadas a la medida.",
@@ -36,6 +36,11 @@ export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -62,19 +67,19 @@ export default function HeroCarousel() {
     setTouchEnd(0);
   };
 
-  // Carrusel Autoplay con visibilidad de documento
   useEffect(() => {
     let timer: NodeJS.Timeout;
     
     const startTimer = () => {
+      if (timer) clearInterval(timer);
       timer = setInterval(() => {
         setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-      }, 6000);
+      }, 7000); // 7 segundos para que coincida con la animación
     };
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        clearInterval(timer);
+        if (timer) clearInterval(timer);
       } else {
         startTimer();
       }
@@ -84,7 +89,7 @@ export default function HeroCarousel() {
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      clearInterval(timer);
+      if (timer) clearInterval(timer);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
@@ -107,14 +112,19 @@ export default function HeroCarousel() {
             src={slide.image}
             alt="Famax Concreto Perú"
             fill
-            className={`object-cover object-center transition-transform duration-[7000ms] ease-out ${
-              index === currentSlide ? "scale-100" : "scale-[1.15]"
+            className={`object-cover object-center transition-transform duration-[10000ms] ease-out ${
+              index === currentSlide && isMounted ? "scale-100" : "scale-[1.15]"
             }`}
             priority={index === 0}
             quality={100}
           />
           {/* Overlay sutil para legibilidad, similar al del video */}
-          <div className={`absolute inset-0 ${slide.align === 'left' ? 'bg-gradient-to-r from-black/50 via-black/20 to-transparent' : 'bg-black/20'} z-10`} />
+          {/* Overlay oscuro sutil uniforme en todas las slides */}
+          <div className="absolute inset-0 bg-black/35 z-10" />
+          {/* Gradiente lateral adicional para slides alineadas a la izquierda */}
+          {slide.align === 'left' && (
+            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent z-10" />
+          )}
           
           <div className="container-custom relative z-20 w-full h-full flex items-center">
             <div className={`w-full mt-8 sm:mt-0 transition-all duration-1000 transform ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${slide.align === 'center' ? 'text-center mx-auto' : 'text-left'}`}>

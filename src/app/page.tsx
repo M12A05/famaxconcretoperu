@@ -204,62 +204,83 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "Pavimentación Industrial", img: "/images/adoquines.webp" },
-              { title: "Losa Deportiva Puente Piedra", img: "/images/concreto-premezclado.webp" },
-              { title: "Cimentación Edificio Residencial", img: "/images/servicios-integrales.webp" }
+              { img: "/images/proyecto1.jpg" },
+              { img: "/images/proyecto2.jpg" },
+              { img: "/images/proyecto3.jpg" }
             ].map((proj, i) => (
-              <div key={i} className={`group relative h-64 rounded-xl overflow-hidden shadow-sm opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
-                <Image src={proj.img} alt={proj.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-5">
-                  <h3 className="text-white font-bold text-lg">{proj.title}</h3>
-                </div>
+              <div key={i} className={`group relative h-80 rounded-xl overflow-hidden shadow-md opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
+                <Image src={proj.img} alt={`Proyecto ejecutado ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Clientes que confían en nosotros (Marquee) */}
-      <section className="py-16 bg-white overflow-hidden">
+      {/* Testimonios */}
+      <section className="pt-10 pb-14 bg-[#FBF9F8] overflow-hidden">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-14 opacity-0 scroll-animate" data-animation="animate-fade-in delay-100">
-            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Clientes que confían en nosotros</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] uppercase mb-4 tracking-tight">Lo que dicen nuestros clientes</h2>
             <div className="w-16 h-[3px] bg-[#AD131B] mx-auto mb-5" />
+            <p className="text-gray-600 font-medium">La confianza de quienes confían en Famax es nuestro mayor logro.</p>
           </div>
         </div>
 
-        {/* Contenedor del Carrusel Infinito */}
-        <div className="relative w-full flex overflow-hidden">
-          {/* Capas de gradiente para suavizar los bordes */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+        {/* Carrusel infinito de testimonios */}
+        <div className="marquee-wrapper relative w-full flex overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#FBF9F8] to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#FBF9F8] to-transparent z-10" />
 
-          <div className="flex w-max animate-marquee-scroll hover:[animation-play-state:paused]">
-            {/* Duplicamos el array para lograr el scroll infinito sin cortes */}
+          <div className="flex w-max animate-marquee-testimonios items-stretch">
             {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-8 md:gap-12 px-4 md:px-6 items-center">
+              <div key={i} className="flex gap-5 px-4 items-stretch">
                 {[
-                  { name: "Municipalidad de Magdalena del Mar", img: "/images/clientes/muni-magdalena.webp" },
-                  { name: "Municipalidad de San Isidro", img: "/images/clientes/muni-san-isidro.webp" },
-                  { name: "Municipalidad del Callao", img: "/images/clientes/muni-callao.webp" },
-                  { name: "Municipalidad de Ventanilla", img: "/images/clientes/muni-ventanilla.webp" },
-                  { name: "Municipalidad de Comas", img: "/images/clientes/muni-comas.webp" },
-                  { name: "Municipalidad de San Martín de Porres", img: "/images/clientes/muni-smp.webp" },
-                ].map((client, idx) => (
-                  <div key={idx} className="flex flex-col items-center justify-center w-[200px] md:w-[240px] lg:w-[260px] shrink-0 gap-3 md:gap-4 cursor-pointer group">
-                    <div className="relative w-full h-32 md:h-40 transition-transform duration-300 group-hover:scale-105">
-                      <Image
-                        src={client.img}
-                        alt={client.name}
-                        fill
-                        sizes="(max-width: 768px) 50vw, 20vw"
-                        className="object-contain drop-shadow-sm"
-                      />
+                  {
+                    name: "Carlos Quispe Mamani",
+                    text: "El concreto llegó puntual y con el certificado de calidad en mano. Sin eso no hubiéramos podido continuar la obra al día siguiente."
+                  },
+                  {
+                    name: "Rosa Huamán Flores",
+                    text: "Llevamos tres obras con Famax y nunca hemos tenido un problema. El despacho siempre llega a la hora exacta."
+                  },
+                  {
+                    name: "Jorge Salcedo Tello",
+                    text: "Muy buena atención desde la cotización hasta el vaciado. Me explicaron todo el proceso sin complicaciones."
+                  },
+                  {
+                    name: "Milagros Condori Apaza",
+                    text: "Pedí concreto para mi losa en Comas y llegaron perfectamente. Recomiendo Famax a todos mis vecinos de la zona."
+                  },
+                  {
+                    name: "Víctor Lazo Ríos",
+                    text: "Trabajé con varias empresas concreteras antes, pero Famax es la única que cumple los tiempos sin excusas."
+                  },
+                  {
+                    name: "Lucía Paredes Vásquez",
+                    text: "El precio fue justo y la calidad superó lo que esperaba. Mi proyecto de autoconstrucción quedó sólido y seguro."
+                  },
+                  {
+                    name: "Aldo Fernández Chávez",
+                    text: "Famax nos ayudó a terminar el proyecto en tiempo récord. Coordinaron directamente con el maestro de obra sin ningún problema."
+                  },
+                  {
+                    name: "Norma Ccallo Huanca",
+                    text: "Excelente servicio. Nos orientaron sobre el tipo de mezcla correcto y eso hizo la diferencia en la resistencia de la cimentación."
+                  },
+                ].map((t, idx) => (
+                  <div
+                    key={idx}
+                    className="w-[300px] md:w-[340px] shrink-0 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col gap-4"
+                  >
+                    {/* Comillas decorativas */}
+                    <span className="text-5xl leading-none text-[#AD131B] font-serif select-none">&ldquo;</span>
+                    <p className="text-gray-700 text-sm md:text-base leading-relaxed flex-1 -mt-4">
+                      {t.text}
+                    </p>
+                    <div className="pt-2 border-t border-gray-100">
+                      <p className="font-bold text-[#1A1A1A] text-sm">{t.name}</p>
                     </div>
-                    <span className="text-sm md:text-base font-bold text-gray-800 text-center w-full whitespace-normal leading-snug transition-colors duration-300 group-hover:text-[#AD131B]">
-                      {client.name}
-                    </span>
                   </div>
                 ))}
               </div>
