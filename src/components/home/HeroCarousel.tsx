@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    image: "/images/fotoportada1.jpg",
+    image: "/images/fotoportada1-v2.jpg",
     subtitle: "",
     title: "Concreto para pequeñas<br />y grandes obras",
     desc: "",
@@ -153,7 +153,7 @@ export default function HeroCarousel() {
               >
                 <span>{slide.buttonText}</span>
                 <div className="bg-white text-[#E50019] p-2 rounded-full group-hover:bg-gray-100 transition-colors">
-                  <ChevronRight size={20} strokeWidth={3.5} className="ml-0.5" />
+                  <FaChevronRight size={20} className="ml-0.5" />
                 </div>
               </Link>
             </div>

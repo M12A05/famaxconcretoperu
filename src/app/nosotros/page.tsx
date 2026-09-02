@@ -1,17 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Target, Eye, Building2, FlaskConical, Wrench } from "lucide-react";
+import { FaBullseye, FaEye, FaBuilding, FaFlask, FaWrench } from "react-icons/fa";
 import type { Metadata } from "next";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
 export const metadata: Metadata = {
   title: "¿Quiénes Somos? | FAMAX CONCRETO PERÚ",
   description: "Empresa 100% peruana con 6 años de experiencia en producción y suministro de concreto premezclado en Lima Norte. Laboratorio propio y aditivo Quincha.",
-  alternates: { canonical: "https://famaxconcretoperu.vercel.app/nosotros" },
+  alternates: { canonical: "https://www.famaxconcreto.com.pe/nosotros" },
   openGraph: {
     title: "¿Quiénes Somos? | FAMAX CONCRETO PERÚ",
     description: "Somos una concretera 100% peruana con laboratorio propio, flota de mixers y 6 años atendiendo Lima Norte con puntualidad y calidad.",
-    url: "https://famaxconcretoperu.vercel.app/nosotros",
+    url: "https://www.famaxconcreto.com.pe/nosotros",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
@@ -44,14 +44,14 @@ export default function NosotrosPage() {
             {/* Imagen */}
             <div className="relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <Image
-                src="/images/grupogeneral.jpg"
+                src="/images/grupogeneral-v2.jpg"
                 alt="Equipo de FAMAX CONCRETO PERÚ"
                 fill
                 className="object-cover object-center"
                 quality={90}
               />
               {/* Toque oscuro sutil */}
-              <div className="absolute inset-0 bg-black/0 rounded-2xl" />
+              <div className="absolute inset-0 bg-transparent rounded-2xl" />
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function NosotrosPage() {
             {/* Misión */}
             <div className="bg-white border border-gray-100 rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
               <div className="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mb-5 group-hover:bg-[#AD131B] transition-colors duration-300">
-                <Target className="text-[#AD131B] group-hover:text-white transition-colors duration-300" size={28} />
+                <FaBullseye className="text-[#AD131B] group-hover:text-white transition-colors duration-300" size={28} />
               </div>
               <h2 className="text-xl font-black mb-3 text-[#1A1A1A] uppercase tracking-tight">Nuestra Misión</h2>
               <p className="text-gray-600 leading-relaxed text-sm md:text-base font-medium">
@@ -75,7 +75,7 @@ export default function NosotrosPage() {
             {/* Visión */}
             <div className="bg-white border border-gray-100 rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <div className="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mb-5 group-hover:bg-[#AD131B] transition-colors duration-300">
-                <Eye className="text-[#AD131B] group-hover:text-white transition-colors duration-300" size={28} />
+                <FaEye className="text-[#AD131B] group-hover:text-white transition-colors duration-300" size={28} />
               </div>
               <h2 className="text-xl font-black mb-3 text-[#1A1A1A] uppercase tracking-tight">Nuestra Visión</h2>
               <p className="text-gray-600 leading-relaxed text-sm md:text-base font-medium">
@@ -100,17 +100,17 @@ export default function NosotrosPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
-                icon: <Building2 size={26} strokeWidth={1.5} />,
+                icon: <FaBuilding size={26} />,
                 title: "Oficinas y Gestión Logística",
                 desc: "Oficinas administrativas equipadas para el seguimiento de despachos en tiempo real y atención personalizada para la programación de su vaciado.",
               },
               {
-                icon: <FlaskConical size={26} strokeWidth={1.5} />,
+                icon: <FaFlask size={26} />,
                 title: "Laboratorio y Control de Calidad",
                 desc: "Laboratorio propio equipado para el diseño de mezclas, toma de probetas y certificación de resistencia estructural.",
               },
               {
-                icon: <Wrench size={26} strokeWidth={1.5} />,
+                icon: <FaWrench size={26} />,
                 title: "Rigor Técnico en Mezclas",
                 desc: "Uso del aditivo especializado Quincha para alcanzar la máxima resistencia y control de trabajabilidad mediante el ensayo de slump (Cono de Abrams).",
               },

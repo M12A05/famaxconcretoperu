@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Truck, ArrowRight, Factory, ShieldCheck, ArrowUpFromLine, LayoutGrid, Wrench, CheckCircle } from "lucide-react";
+import { FaTruck, FaArrowRight, FaIndustry, FaShieldAlt, FaArrowUp, FaTh, FaWrench, FaCheckCircle } from "react-icons/fa";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
@@ -29,7 +29,7 @@ export default function Home() {
             {/* Card 1 */}
             <div className="bg-white border border-gray-200 rounded-lg p-6 md:p-8 opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
               <div className="text-[#AD131B] mb-5">
-                <Factory size={28} strokeWidth={1.5} />
+                <FaIndustry size={28} />
               </div>
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Resistencia Maxima</h3>
               <p className="text-gray-600 text-sm font-medium leading-relaxed">
@@ -40,7 +40,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white border border-gray-200 rounded-lg p-6 md:p-8 opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
               <div className="text-[#AD131B] mb-5">
-                <Truck size={28} strokeWidth={1.5} />
+                <FaTruck size={28} />
               </div>
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Puntualidad Exacta</h3>
               <p className="text-gray-600 text-sm font-medium leading-relaxed">
@@ -51,7 +51,7 @@ export default function Home() {
             {/* Card 3 */}
             <div className="bg-white border border-gray-200 rounded-lg p-6 md:p-8 opacity-0 scroll-animate" data-animation="animate-slide-right delay-300">
               <div className="text-[#AD131B] mb-5">
-                <ShieldCheck size={28} strokeWidth={1.5} />
+                <FaShieldAlt size={28} />
               </div>
               <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Control de Trabajabilidad</h3>
               <p className="text-gray-600 text-sm font-medium leading-relaxed">
@@ -72,7 +72,7 @@ export default function Home() {
               <div className="absolute bottom-[-1px] left-0 w-48 md:w-56 h-[3px] bg-[#8B0000] opacity-0 scroll-animate" data-animation="animate-slide-left delay-100"></div>
             </div>
             <Link href="/productos-y-servicios" className="text-[#8B0000] hover:text-[#6B0000] font-bold inline-flex items-center gap-2 mt-6 md:mt-0 uppercase text-sm tracking-widest transition-colors opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
-              VER CATÁLOGO COMPLETO <ArrowRight size={16} />
+              VER CATÁLOGO COMPLETO <FaArrowRight size={16} />
             </Link>
           </div>
 
@@ -167,12 +167,12 @@ export default function Home() {
           {/* Grid de tarjetas sólidas blancas estilo rectángulos anchos (Más pequeñas) */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-12">
             {[
-              { name: "Alquiler de Camiones Mixer", icon: <Truck size={28} strokeWidth={1.5} /> },
-              { name: "Bombeo de Concreto", icon: <ArrowUpFromLine size={28} strokeWidth={1.5} /> },
-              { name: "Asesoría Técnica y Cubicaje", icon: <Wrench size={28} strokeWidth={1.5} /> },
-              { name: "Control de Calidad y Ensayos", icon: <CheckCircle size={28} strokeWidth={1.5} /> },
-              { name: "Instalación de Adoquines", icon: <LayoutGrid size={28} strokeWidth={1.5} /> },
-              { name: "Instalación de Baldosas Podotáctiles", icon: <LayoutGrid size={28} strokeWidth={1.5} /> },
+              { name: "Alquiler de Camiones Mixer", icon: <FaTruck size={28} /> },
+              { name: "Bombeo de Concreto", icon: <FaArrowUp size={28} /> },
+              { name: "Asesoría Técnica y Cubicaje", icon: <FaWrench size={28} /> },
+              { name: "Control de Calidad y Ensayos", icon: <FaCheckCircle size={28} /> },
+              { name: "Instalación de Adoquines", icon: <FaTh size={28} /> },
+              { name: "Instalación de Baldosas Podotáctiles", icon: <FaTh size={28} /> },
             ].map((s, i) => (
               <div key={i} className={`bg-white rounded-xl flex flex-col items-center justify-center p-4 sm:p-6 gap-3 hover:shadow-lg transition-all duration-300 opacity-0 scroll-animate hover:-translate-y-1`} data-animation={`animate-fade-up delay-${((i % 3) + 1) * 100}`}>
                 <div className="text-[#AD131B]">

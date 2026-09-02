@@ -1,59 +1,60 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, Wrench, Blocks, Cone, PersonStanding, Tractor, Drill, FileText, FileDown, FlaskConical } from "lucide-react";
+import { FaCheckCircle, FaWrench, FaCubes, FaHardHat, FaTractor, FaTools, FaFileAlt, FaFlask } from "react-icons/fa";
+import { FaRoadBarrier } from "react-icons/fa6";
 import type { Metadata } from "next";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
 export const metadata: Metadata = {
   title: "Productos y Servicios | FAMAX CONCRETO PERÚ",
   description: "Catálogo completo de FAMAX: Concreto Premezclado f'c 210, Adoquines, Baldosas Podotáctiles, Bombeo y Alquiler de Mixers en Lima.",
-  alternates: { canonical: "https://famaxconcretoperu.vercel.app/productos-y-servicios" },
+  alternates: { canonical: "https://www.famaxconcreto.com.pe/productos-y-servicios" },
   openGraph: {
     title: "Productos y Servicios | FAMAX CONCRETO PERÚ",
     description: "Catálogo completo de FAMAX: Concreto Premezclado f'c 210, Adoquines, Baldosas Podotáctiles, Bombeo y Alquiler de Mixers.",
-    url: "https://famaxconcretoperu.vercel.app/productos-y-servicios",
+    url: "https://www.famaxconcreto.com.pe/productos-y-servicios",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 
 const products = [
   {
-    icon: <Wrench size={24} strokeWidth={1.5} />,
+    icon: <FaWrench size={24} />,
     name: "Concreto Premezclado",
     image: "/images/catalogo/concreto-premezclado.webp",
     desc: "Elaborado con cemento UNACEM, agregados premium y aditivo \"Quincha\" para máxima resistencia.",
     bullets: ["Dosificaciones: HS 175, HS 210, HS 315", "Dosificaciones: f'c 175, f'c 210"],
   },
   {
-    icon: <Blocks size={24} strokeWidth={1.5} />,
+    icon: <FaCubes size={24} />,
     name: "Adoquines de Concreto",
     image: "/images/catalogo/adoquines-de-concreto.webp",
     desc: "Alta resistencia y larga durabilidad. Ideales para pisos, veredas y playas de estacionamiento de alto tránsito.",
     bullets: [],
   },
   {
-    icon: <Cone size={24} strokeWidth={1.5} />,
+    icon: <FaRoadBarrier size={24} />,
     name: "Cachacos de Concreto",
     image: "/images/catalogo/cachacos-de-concreto.webp",
     desc: "Medidas estándar enfocadas en la seguridad vial, delimitación de espacios y protección de perímetros.",
     bullets: [],
   },
   {
-    icon: <PersonStanding size={24} strokeWidth={1.5} />,
+    icon: <FaHardHat size={24} />,
     name: "Baldosas Podotáctiles",
     image: "/images/catalogo/baldosas-podotactiles.webp",
     desc: "Diseñadas para señalización de accesibilidad en proyectos urbanos e industriales según normativa vigente.",
     bullets: [],
   },
   {
-    icon: <Tractor size={24} strokeWidth={1.5} />,
+    icon: <FaTractor size={24} />,
     name: "Alquiler de Maquinaria Pesada",
     image: "/images/catalogo/alquiler-de-maquinaria-pesada.webp",
     desc: "Equipos operativos para movimiento de tierras, carga y apoyo logístico en obra, garantizando rendimiento continuo.",
     bullets: [],
   },
   {
-    icon: <Drill size={24} strokeWidth={1.5} />,
+    icon: <FaTools size={24} />,
     name: "Bombeo de Concreto con Pluma",
     image: "/images/catalogo/bombeo-de-concreto-con-pluma.webp",
     desc: "Vaciado en altura mediante camión con brazo articulado. Ideal para losas y techos de difícil acceso.",
@@ -64,32 +65,32 @@ const products = [
 const services = [
   { 
     name: "Alquiler Camión Mezcladora (Mixer)", 
-    icon: <Tractor size={32} strokeWidth={1.5} />,
+    icon: <FaTractor size={32} />,
     desc: "Flota moderna con capacidad óptima para el transporte continuo y seguro de concreto premezclado."
   },
   { 
     name: "Servicio de Bombeo de Concreto", 
-    icon: <Drill size={32} strokeWidth={1.5} />,
+    icon: <FaTools size={32} />,
     desc: "Equipos estacionarios y telescópicos para vaciados en altura o de difícil acceso con alta eficiencia."
   },
   { 
     name: "Asesoría Técnica y Cubicaje en Obra", 
-    icon: <Wrench size={32} strokeWidth={1.5} />,
+    icon: <FaWrench size={32} />,
     desc: "Ingenieros especialistas evalúan su proyecto in-situ para optimizar los volúmenes y diseños de mezcla."
   },
   { 
     name: "Servicio de Control de Calidad", 
-    icon: <CheckCircle2 size={32} strokeWidth={1.5} />,
+    icon: <FaCheckCircle size={32} />,
     desc: "Rigurosas pruebas en campo (Slump) para asegurar la trabajabilidad y fluidez del concreto antes del vaciado."
   },
   { 
     name: "Ensayos y Certificación de Resistencia", 
-    icon: <FlaskConical size={32} strokeWidth={1.5} />,
+    icon: <FaFlask size={32} />,
     desc: "Rotura de probetas en laboratorio para garantizar que el nivel estructural cumple con las normativas."
   },
   { 
     name: "Instalación de Adoquines y Podotáctiles", 
-    icon: <Blocks size={32} strokeWidth={1.5} />,
+    icon: <FaCubes size={32} />,
     desc: "Personal calificado para pavimentación exterior asegurando durabilidad, estética y accesibilidad."
   },
 ];
@@ -98,7 +99,7 @@ export default function ProductosServiciosPage() {
   const whatsappMsg = encodeURIComponent(
     "Hola, me gustaría solicitar una cotización. \nLes comparto los datos de mi proyecto:\n\n- Volumen estimado:    m³\n- Ubicación del proyecto: \n- Producto o servicio requerido: \n- Tipo de vaciado: \n\nQuedo atento a su cotización. ¡Muchas gracias! "
   );
-  const whatsappUrl = `https://wa.me/51955416601?text=${whatsappMsg}`;
+  const whatsappUrl = `https://wa.me/51973350524?text=${whatsappMsg}`;
 
   return (
     <>
@@ -257,7 +258,7 @@ export default function ProductosServiciosPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-[#1A1A1A] hover:bg-black text-white py-4 px-8 rounded-xl font-bold uppercase text-xs md:text-sm transition-all shadow-md hover:shadow-lg"
               >
-                <FileText size={18} /> Descargar Ficha Técnica de Concreto (DRIVE)
+                <FaFileAlt size={18} /> Descargar Ficha Técnica de Concreto (DRIVE)
               </a>
             </div>
           </div>
@@ -285,7 +286,7 @@ export default function ProductosServiciosPage() {
               "Tipo de vaciado",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 text-white mb-4 last:mb-0">
-                <CheckCircle2 size={18} className="text-white shrink-0" />
+                <FaCheckCircle size={18} className="text-white shrink-0" />
                 <span className="text-sm font-medium">{item}</span>
               </div>
             ))}

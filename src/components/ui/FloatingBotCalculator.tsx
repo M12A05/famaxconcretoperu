@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, X } from "lucide-react";
+import { FaCalculator, FaTimes } from "react-icons/fa";
 
 export default function FloatingBotCalculator() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +35,7 @@ export default function FloatingBotCalculator() {
             Calcular Concreto
             <span className="absolute top-1/2 -translate-y-1/2 -right-2 border-[8px] border-transparent border-l-white"></span>
           </span>
-          <Calculator size={28} />
+          <FaCalculator size={28} />
         </button>
       )}
 
@@ -50,7 +50,7 @@ export default function FloatingBotCalculator() {
               className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors"
               aria-label="Cerrar Calculadora"
             >
-              <X size={20} />
+              <FaTimes size={20} />
             </button>
             <h3 className="text-xl font-bold text-[#AD131B] leading-tight mb-2">
               Calculadora De M³ De Concreto

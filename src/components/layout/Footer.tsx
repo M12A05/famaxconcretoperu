@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, BookOpen, Scale } from "lucide-react";
+import { FaPhoneAlt, FaBook, FaBalanceScale } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -40,9 +40,12 @@ export default function Footer() {
               <span className="font-bold text-white">Planta:</span> 
               <span>5VFR+822, Puente Piedra 15122, Lima</span>
             </li>
-            <li className="flex items-center gap-3">
+            <li className="flex items-start gap-3">
               <span className="font-bold text-white">Ventas:</span> 
-              <a href="https://wa.me/51973350524" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+51 973 350 524</a>
+              <div className="flex flex-col gap-1">
+                <a href="https://wa.me/51973350524" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+51 973 350 524</a>
+                <a href="https://wa.me/51933595630" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+51 933 595 630</a>
+              </div>
             </li>
             <li className="flex items-center gap-3">
               <span className="font-bold text-white">Email:</span> 
@@ -62,13 +65,13 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/linea-etica" className="inline-flex items-center gap-2 bg-[#FFD700] text-[#1A1A1A] hover:bg-[#F0C800] px-4 py-2 rounded-sm font-bold text-xs uppercase tracking-wide transition-colors shadow-sm">
-                <Scale size={16} className="text-[#1A1A1A]" />
+                <FaBalanceScale size={16} className="text-[#1A1A1A]" />
                 Línea Ética
               </Link>
             </li>
             <li>
               <Link href="/libro-de-reclamaciones" className="inline-flex items-center gap-2 bg-white text-[#1A1A1A] hover:bg-gray-100 px-4 py-2 rounded-sm font-bold text-xs uppercase tracking-wide transition-colors shadow-sm">
-                <BookOpen size={16} className="text-[#1A1A1A]" />
+                <FaBook size={16} className="text-[#1A1A1A]" />
                 Libro Reclamaciones
               </Link>
             </li>

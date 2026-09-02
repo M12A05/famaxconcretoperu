@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { ShieldCheck, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import { FaShieldAlt, FaComments, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Línea Ética | FAMAX CONCRETO PERÚ",
   description:
     "Canal confidencial de FAMAX CONCRETO PERÚ para reportar denuncias sobre conductas contrarias a nuestros principios éticos, normativa interna o legalidad.",
-  alternates: { canonical: "https://famaxconcretoperu.vercel.app/linea-etica" },
+  alternates: { canonical: "https://www.famaxconcreto.com.pe/linea-etica" },
   openGraph: {
     title: "Línea Ética | FAMAX CONCRETO PERÚ",
     description: "Reporta de forma confidencial cualquier conducta contraria a la ética de FAMAX CONCRETO PERÚ.",
-    url: "https://famaxconcretoperu.vercel.app/linea-etica",
+    url: "https://www.famaxconcreto.com.pe/linea-etica",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
@@ -35,7 +35,7 @@ export default function LineaEticaPage() {
           <div className="max-w-3xl space-y-8">
             <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
               <div className="w-14 h-14 border border-gray-200 flex items-center justify-center rounded-sm shrink-0">
-                <ShieldCheck className="text-[#AD131B]" size={24} />
+                <FaShieldAlt className="text-[#AD131B]" size={24} />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-[#1A1A1A] mb-2">¿Qué se puede reportar?</h2>
@@ -48,7 +48,7 @@ export default function LineaEticaPage() {
 
             <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
               <div className="w-14 h-14 border border-gray-200 flex items-center justify-center rounded-sm shrink-0">
-                <MessageCircle className="text-[#AD131B]" size={24} />
+                <FaComments className="text-[#AD131B]" size={24} />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-[#1A1A1A] mb-2">Confidencialidad</h2>
@@ -61,13 +61,13 @@ export default function LineaEticaPage() {
 
             <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
               <div className="w-14 h-14 border border-gray-200 flex items-center justify-center rounded-sm shrink-0">
-                <Mail className="text-[#AD131B]" size={24} />
+                <FaEnvelope className="text-[#AD131B]" size={24} />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-[#1A1A1A] mb-2">Puedes reportar por:</h2>
                 <ul className="space-y-2 text-gray-600 text-sm md:text-base font-medium">
                   <li>• Correo: <span className="text-[#AD131B] font-bold">famax@grupoconstructores.com</span></li>
-                  <li>• WhatsApp confidencial: <span className="text-[#AD131B] font-bold">+51 973 350 524</span></li>
+                  <li>• WhatsApp confidencial: <span className="text-[#AD131B] font-bold">+51 973 350 524 / +51 933 595 630</span></li>
                   <li>• Correo general: <span className="text-[#AD131B] font-bold">famax@grupoconstructores.com</span></li>
                 </ul>
               </div>
@@ -75,11 +75,11 @@ export default function LineaEticaPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
               <div className="flex items-center gap-3 bg-[#FBF9F8] rounded-xl p-5 border border-gray-100">
-                <MapPin className="text-[#AD131B] shrink-0" size={20} />
+                <FaMapMarkerAlt className="text-[#AD131B] shrink-0" size={20} />
                 <p className="text-sm md:text-base font-medium text-[#1A1A1A]">Planta: 5VFR+822, Puente Piedra, Lima</p>
               </div>
               <div className="flex items-center gap-3 bg-[#FBF9F8] rounded-xl p-5 border border-gray-100">
-                <Clock className="text-[#AD131B] shrink-0" size={20} />
+                <FaClock className="text-[#AD131B] shrink-0" size={20} />
                 <p className="text-sm md:text-base font-medium text-[#1A1A1A]">Lun – Sáb: 7:00 a 18:00</p>
               </div>
             </div>

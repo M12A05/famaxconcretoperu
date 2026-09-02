@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { User, Phone, MapPin, Mail, FileText, CheckCircle2 } from "lucide-react";
+import { FaUser, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaCheckCircle } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Libro de Reclamaciones | FAMAX CONCRETO PERÚ",
   description:
     "Hoja de reclamaciones de FAMAX CONCRETO PERÚ, conforme a la Ley de Protección al Consumidor (INDECOPI, Perú). Presenta aquí tu reclamo o queja.",
-  alternates: { canonical: "https://famaxconcretoperu.vercel.app/libro-de-reclamaciones" },
+  alternates: { canonical: "https://www.famaxconcreto.com.pe/libro-de-reclamaciones" },
   openGraph: {
     title: "Libro de Reclamaciones | FAMAX CONCRETO PERÚ",
     description: "Presenta tu reclamo o queja ante FAMAX CONCRETO PERÚ conforme a la normativa peruana del consumidor.",
-    url: "https://famaxconcretoperu.vercel.app/libro-de-reclamaciones",
+    url: "https://www.famaxconcreto.com.pe/libro-de-reclamaciones",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
@@ -36,28 +36,31 @@ export default function LibroReclamacionesPage() {
             {/* Datos de la empresa */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 pb-8 border-b border-gray-200 text-sm md:text-base">
               <div className="flex items-center gap-3">
-                <User className="text-[#AD131B] shrink-0" size={20} />
+                <FaUser className="text-[#AD131B] shrink-0" size={20} />
                 <div>
                   <p className="font-bold text-[#1A1A1A] uppercase tracking-wide text-xs">Razón Social</p>
                   <p className="text-gray-600 font-medium">FAMAX CONCRETO PERÚ</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="text-[#AD131B] shrink-0" size={20} />
+                <FaPhoneAlt className="text-[#AD131B] shrink-0" size={20} />
                 <div>
-                  <p className="font-bold text-[#1A1A1A] uppercase tracking-wide text-xs">Teléfono</p>
-                  <p className="text-gray-600 font-medium">+51 973 350 524</p>
+                  <h2 className="font-bold text-[#1A1A1A] text-base mb-1">TELÉFONO</h2>
+                  <div className="flex flex-col">
+                    <p className="text-gray-600 font-medium">+51 973 350 524</p>
+                    <p className="text-gray-600 font-medium">+51 933 595 630</p>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="text-[#AD131B] shrink-0" size={20} />
+                <FaMapMarkerAlt className="text-[#AD131B] shrink-0" size={20} />
                 <div>
                   <p className="font-bold text-[#1A1A1A] uppercase tracking-wide text-xs">Domicilio</p>
                   <p className="text-gray-600 font-medium">5VFR+822, Puente Piedra, Lima 15122</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="text-[#AD131B] shrink-0" size={20} />
+                <FaEnvelope className="text-[#AD131B] shrink-0" size={20} />
                 <div>
                   <p className="font-bold text-[#1A1A1A] uppercase tracking-wide text-xs">Correo</p>
                   <p className="text-gray-600 font-medium">famax@grupoconstructores.com</p>
@@ -111,10 +114,10 @@ export default function LibroReclamacionesPage() {
               href="mailto:famax@grupoconstructores.com?subject=Nuevo%20Reclamo%2FQueja%20-%20Libro%20de%20Reclamaciones"
               className="inline-flex items-center gap-3 bg-[#AD131B] hover:bg-[#8B0000] text-white px-8 py-4 rounded-lg font-black uppercase text-sm tracking-wide transition-colors shadow-md"
             >
-              <Mail size={18} /> ENVIAR RECLAMO
+              <FaEnvelope size={18} /> ENVIAR RECLAMO
             </a>
             <p className="text-xs text-gray-500 mt-4 flex items-center gap-2">
-              <CheckCircle2 size={14} className="text-green-500" />
+              <FaCheckCircle size={14} className="text-green-500" />
               De conformidad con el artículo 152° del Código de Protección y Defensa del Consumidor.
             </p>
           </div>

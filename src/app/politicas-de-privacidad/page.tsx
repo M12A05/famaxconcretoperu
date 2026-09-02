@@ -4,11 +4,11 @@ export const metadata: Metadata = {
   title: "Políticas de Privacidad | FAMAX CONCRETO PERÚ",
   description:
     "Conoce cómo FAMAX CONCRETO PERÚ protege y utiliza tus datos personales. Transparencia total en el tratamiento de la información de nuestros clientes en Lima.",
-  alternates: { canonical: "https://famaxconcretoperu.vercel.app/politicas-de-privacidad" },
+  alternates: { canonical: "https://www.famaxconcreto.com.pe/politicas-de-privacidad" },
   openGraph: {
     title: "Políticas de Privacidad | FAMAX CONCRETO PERÚ",
     description: "Políticas de privacidad y tratamiento de datos personales de FAMAX CONCRETO PERÚ.",
-    url: "https://famaxconcretoperu.vercel.app/politicas-de-privacidad",
+    url: "https://www.famaxconcreto.com.pe/politicas-de-privacidad",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };

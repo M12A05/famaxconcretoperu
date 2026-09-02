@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Phone, MapPin, MessageCircle, Mail } from "lucide-react";
+import { FaCheckCircle, FaPhoneAlt, FaMapMarkerAlt, FaComments, FaEnvelope } from "react-icons/fa";
 import type { FormEvent } from "react";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
@@ -64,18 +64,21 @@ export default function ContactoClient() {
                 {/* Teléfono */}
                 <div className="flex items-start gap-6 opacity-0 scroll-animate" data-animation="animate-slide-left delay-200">
                   <div className="w-14 h-14 border border-gray-200 flex items-center justify-center rounded-sm shrink-0">
-                    <Phone className="text-[#AD131B]" size={24} />
+                    <FaPhoneAlt className="text-[#AD131B]" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Teléfono</h3>
-                    <p className="text-gray-600 font-medium">973 350 524</p>
+                    <h3 className="font-bold text-[#1A1A1A] text-lg mb-1">TELÉFONO</h3>
+                    <div className="flex flex-col">
+                      <p className="text-gray-600 font-medium">+51 973 350 524</p>
+                      <p className="text-gray-600 font-medium">+51 933 595 630</p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Contacto Online */}
                 <div className="flex items-start gap-6 opacity-0 scroll-animate" data-animation="animate-slide-left delay-300">
                   <div className="w-14 h-14 border border-gray-200 flex items-center justify-center rounded-sm shrink-0">
-                    <MessageCircle className="text-[#AD131B]" size={24} />
+                    <FaComments className="text-[#AD131B]" size={24} />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Contacto Online</h3>
@@ -89,7 +92,7 @@ export default function ContactoClient() {
                 {/* Dirección */}
                 <div className="flex items-start gap-6 opacity-0 scroll-animate" data-animation="animate-slide-left delay-400">
                   <div className="w-14 h-14 border border-gray-200 flex items-center justify-center rounded-sm shrink-0">
-                    <MapPin className="text-[#AD131B]" size={24} />
+                    <FaMapMarkerAlt className="text-[#AD131B]" size={24} />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Dirección</h3>
@@ -101,7 +104,7 @@ export default function ContactoClient() {
                 {/* Email */}
                 <div className="flex items-start gap-6 opacity-0 scroll-animate" data-animation="animate-slide-left delay-500">
                   <div className="w-14 h-14 border border-gray-200 flex items-center justify-center rounded-sm shrink-0">
-                    <Mail className="text-[#AD131B]" size={24} />
+                    <FaEnvelope className="text-[#AD131B]" size={24} />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Correo Electrónico</h3>
@@ -116,7 +119,7 @@ export default function ContactoClient() {
               {status === "success" ? (
                 <div className="text-center py-16 bg-gray-50 border border-gray-100 rounded-sm">
                   <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle2 className="text-green-500" size={36} />
+                    <FaCheckCircle className="text-green-500" size={36} />
                   </div>
                   <h3 className="text-xl font-black text-[#1A1A1A] mb-2 uppercase">¡Solicitud enviada!</h3>
                   <p className="text-gray-500 text-sm mb-8 px-4">Te hemos abierto WhatsApp para confirmar los detalles con nuestro equipo.</p>
@@ -169,7 +172,7 @@ export default function ContactoClient() {
                   >
                     {status === "loading" ? "Enviando..." : (
                       <>
-                        <CheckCircle2 size={18} /> Enviar Solicitud
+                        <FaCheckCircle size={18} /> Enviar Solicitud
                       </>
                     )}
                   </button>
@@ -191,7 +194,7 @@ export default function ContactoClient() {
             <h2 className="text-xl font-black text-[#1A1A1A] uppercase tracking-tight">Nuestra Planta de Trabajo</h2>
           </div>
           <p className="text-gray-500 text-sm mb-6 flex items-center gap-2 pl-4">
-            <MapPin size={13} className="text-[#AD131B]" /> FAMAX CONCRETO PERU, 5VFR+822, Puente Piedra 15122
+            <FaMapMarkerAlt size={13} className="text-[#AD131B]" /> FAMAX CONCRETO PERU, 5VFR+822, Puente Piedra 15122
           </p>
         </div>
         <div className="w-full h-[400px] opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">

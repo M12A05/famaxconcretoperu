@@ -9,7 +9,7 @@ import FloatingBotCalculator from "@/components/ui/FloatingBotCalculator";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
-const BASE_URL = "https://famaxconcretoperu.vercel.app";
+const BASE_URL = "https://www.famaxconcreto.com.pe";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     description:
       "Empresa peruana especializada en producción, suministro y logística integral de concreto premezclado y prefabricados en Lima Norte.",
     url: BASE_URL,
-    telephone: ["+51973350524"],
+    telephone: ["+51973350524", "+51933595630"],
     email: "famax@grupoconstructores.com",
     address: {
       "@type": "PostalAddress",
