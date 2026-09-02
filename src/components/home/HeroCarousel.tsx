@@ -116,7 +116,7 @@ export default function HeroCarousel() {
               index === currentSlide && isMounted ? "scale-100" : "scale-[1.15]"
             }`}
             priority={index === 0}
-            quality={100}
+            quality={75}
           />
           {/* Overlay sutil para legibilidad, similar al del video */}
           {/* Overlay oscuro sutil uniforme en todas las slides */}

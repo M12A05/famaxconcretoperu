@@ -117,7 +117,7 @@ export default function ProductosServiciosPage() {
             className="object-cover object-center"
             style={{ filter: "contrast(1.08) saturate(1.1) brightness(1.02)" }}
             priority
-            quality={100}
+            quality={80}
           />
           {/* Gradiente: izquierda oscura hasta la mitad → derecha clara */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent lg:to-black/10 z-10" />
