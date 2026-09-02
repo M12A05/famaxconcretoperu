@@ -92,8 +92,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "@type": "OfferCatalog",
       name: "Productos y Servicios FAMAX",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Concreto Premezclado f'c 210 kg/cm2" } },
-        { "@type": "Offer", itemOffered: { "@type": "Product", name: "Adoquines de Concreto" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Suministro de Concreto Premezclado" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Venta de Adoquines de Concreto" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bombeo de Concreto con Pluma" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Alquiler de Camión Mixer" } },
       ],
