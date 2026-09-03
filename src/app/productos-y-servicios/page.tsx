@@ -111,7 +111,7 @@ export default function ProductosServiciosPage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/catalogo/imagenportada-nueva.jpg"
+            src="/images/catalogo/imagenportada-nueva.webp"
             alt="Catálogo de Productos y Servicios Famax"
             fill
             className="object-cover object-center"
