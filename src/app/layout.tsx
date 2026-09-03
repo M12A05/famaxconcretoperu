@@ -17,9 +17,6 @@ export const metadata: Metadata = {
     default: "FAMAX CONCRETO PERÚ | Concreto Premezclado de Alta Resistencia en Lima",
     template: "%s | FAMAX CONCRETO PERÚ",
   },
-  icons: {
-    icon: "/images/famax-icon.webp",
-  },
   description:
     "Empresa peruana especialista en concreto premezclado, adoquines, cachacos y baldosas en Lima Norte. 6 años de experiencia, laboratorio propio y entrega puntual. ¡Cotiza ahora!",
   keywords: [
