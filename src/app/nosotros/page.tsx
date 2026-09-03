@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
 export const metadata: Metadata = {
-  title: "¿Quiénes Somos? | FAMAX CONCRETO PERÚ",
+  title: "¿Quiénes Somos?",
   description: "Empresa 100% peruana con 6 años de experiencia en producción y suministro de concreto premezclado en Lima Norte. Laboratorio propio y aditivo Quincha.",
   alternates: { canonical: "https://www.famaxconcreto.com.pe/nosotros" },
   openGraph: {

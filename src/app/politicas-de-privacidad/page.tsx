@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Políticas de Privacidad | FAMAX CONCRETO PERÚ",
+  title: "Políticas de Privacidad",
   description:
     "Conoce cómo FAMAX CONCRETO PERÚ protege y utiliza tus datos personales. Transparencia total en el tratamiento de la información de nuestros clientes en Lima.",
   alternates: { canonical: "https://www.famaxconcreto.com.pe/politicas-de-privacidad" },

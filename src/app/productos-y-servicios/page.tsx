@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
 export const metadata: Metadata = {
-  title: "Productos y Servicios | FAMAX CONCRETO PERÚ",
+  title: "Productos y Servicios",
   description: "Catálogo completo de FAMAX: Concreto Premezclado f'c 210, Adoquines, Baldosas Podotáctiles, Bombeo y Alquiler de Mixers en Lima.",
   alternates: { canonical: "https://www.famaxconcreto.com.pe/productos-y-servicios" },
   openGraph: {

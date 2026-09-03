@@ -87,16 +87,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "https://www.instagram.com/famaxconcreto",
       "https://www.tiktok.com/@famaxconcreto",
     ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Productos y Servicios FAMAX",
-      itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Suministro de Concreto Premezclado" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Venta de Adoquines de Concreto" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Bombeo de Concreto con Pluma" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Alquiler de Camión Mixer" } },
-      ],
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "Lima Norte, Lima, Perú",
     },
+    knowsAbout: [
+      "Concreto Premezclado de Alta Resistencia",
+      "Suministro de Concreto para Pequeñas y Grandes Obras",
+      "Bombeo de Concreto con Pluma",
+      "Adoquines de Concreto y Prefabricados",
+      "Alquiler de Camiones Mixer",
+      "Control de Calidad y Ensayos de Concreto",
+    ],
   };
 
   return (

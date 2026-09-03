@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FaShieldAlt, FaComments, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Línea Ética | FAMAX CONCRETO PERÚ",
+  title: "Línea Ética",
   description:
     "Canal confidencial de FAMAX CONCRETO PERÚ para reportar denuncias sobre conductas contrarias a nuestros principios éticos, normativa interna o legalidad.",
   alternates: { canonical: "https://www.famaxconcreto.com.pe/linea-etica" },

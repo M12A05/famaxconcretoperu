@@ -4,7 +4,7 @@ import LibroReclamacionesClient from "./LibroReclamacionesClient";
 const BASE_URL = "https://www.famaxconcreto.com.pe";
 
 export const metadata: Metadata = {
-  title: "Libro de Reclamaciones | FAMAX CONCRETO PERÚ",
+  title: "Libro de Reclamaciones",
   description:
     "Hoja de reclamaciones de FAMAX CONCRETO PERÚ, conforme a la Ley de Protección al Consumidor (INDECOPI, Perú). Presenta aquí tu reclamo o queja.",
   alternates: { canonical: `${BASE_URL}/libro-de-reclamaciones` },
