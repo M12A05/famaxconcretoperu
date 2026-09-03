@@ -39,7 +39,8 @@ export default function HeroCarousel() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    const frame = requestAnimationFrame(() => setIsMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {

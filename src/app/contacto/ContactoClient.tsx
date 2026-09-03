@@ -32,7 +32,7 @@ export default function ContactoClient() {
         `Hola FAMAX, quiero cotizar:\n• Nombre/Empresa: ${form.nombre}\n• RUC/DNI: ${form.ruc_dni}\n• Tipo de Concreto: ${form.tipo_concreto}\n• Volumen: ${form.volumen} m³\n• Ubicación: ${form.ubicacion}\n• Tipo de Vaciado: ${form.tipo_vaciado}`
       );
       window.open(`https://wa.me/51973350524?text=${msg}`, "_blank");
-    } catch (err: unknown) {
+    } catch {
       setStatus("error");
       setErrorMsg("Error desconocido");
     }

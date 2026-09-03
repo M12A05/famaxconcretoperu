@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaPhoneAlt, FaBook, FaBalanceScale } from "react-icons/fa";
+import { FaBook, FaBalanceScale } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
