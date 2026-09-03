@@ -7,7 +7,7 @@ import { FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    image: "/images/fotoportada1-v2.jpg",
+    image: "/images/fotoportada1-v2.webp",
     subtitle: "",
     title: "Concreto para pequeñas<br />y grandes obras",
     desc: "",
@@ -15,7 +15,7 @@ const slides = [
     buttonText: "COTIZAR"
   },
   {
-    image: "/images/fotoportada2.jpg",
+    image: "/images/fotoportada2.webp",
     subtitle: "",
     title: "Comprometidos con<br />nuestros clientes",
     desc: "Brindamos Certificado de Calidad<br />de nuestro concreto.",
@@ -23,7 +23,7 @@ const slides = [
     buttonText: "Más información"
   },
   {
-    image: "/images/fotoportada3.jpg",
+    image: "/images/fotoportada3.webp",
     subtitle: "CALIDAD Y PUNTUALIDAD",
     title: "La base sólida para<br />el éxito de tu proyecto",
     desc: "Garantizamos despachos exactos y mezclas diseñadas a la medida.",

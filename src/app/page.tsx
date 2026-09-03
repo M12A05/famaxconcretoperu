@@ -204,9 +204,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { img: "/images/proyecto1.jpg" },
-              { img: "/images/proyecto2.jpg" },
-              { img: "/images/proyecto3.jpg" }
+              { img: "/images/proyecto1.webp" },
+              { img: "/images/proyecto2.webp" },
+              { img: "/images/proyecto3.webp" }
             ].map((proj, i) => (
               <div key={i} className={`group relative h-80 rounded-xl overflow-hidden shadow-md opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
                 <Image src={proj.img} alt={`Proyecto ejecutado ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />

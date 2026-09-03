@@ -44,7 +44,7 @@ export default function NosotrosPage() {
             {/* Imagen */}
             <div className="relative min-h-[350px] lg:min-h-[450px] h-full w-full rounded-2xl overflow-hidden shadow-xl opacity-0 scroll-animate" data-animation="animate-slide-right delay-200">
               <Image
-                src="/images/grupogeneral-v2.jpg"
+                src="/images/personaldefamax-optimized.webp"
                 alt="Equipo de FAMAX CONCRETO PERÚ"
                 fill
                 className="object-cover object-center"
