@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     title: "FAMAX CONCRETO PERÚ | Concreto Premezclado de Alta Resistencia en Lima",
     description:
       "Especialistas en concreto premezclado, adoquines y prefabricados en Lima Norte. Laboratorio propio, aditivo Quincha y entrega puntual. Cotiza ahora.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "FAMAX CONCRETO PERÚ" }],
+    images: [{ url: `${BASE_URL}/og-image.jpg`, width: 1200, height: 630, alt: "FAMAX CONCRETO PERÚ" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "FAMAX CONCRETO PERÚ | Concreto de Alta Resistencia",
     description: "Concretera en Lima Norte. Concreto premezclado, adoquines, bombeo y más. ¡Cotiza ahora!",
-    images: ["/og-image.jpg"],
+    images: [`${BASE_URL}/og-image.jpg`],
   },
   robots: {
     index: true,

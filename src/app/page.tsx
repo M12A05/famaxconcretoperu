@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaTruck, FaArrowRight, FaIndustry, FaShieldAlt, FaArrowUp, FaTh, FaWrench, FaCheckCircle } from "react-icons/fa";
+import { FaTruck, FaArrowRight, FaIndustry, FaShieldAlt, FaArrowUp, FaTh, FaWrench, FaCheckCircle, FaStar } from "react-icons/fa";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import ScrollRevealObserver from "@/components/ui/ScrollRevealObserver";
 
@@ -273,9 +273,16 @@ export default function Home() {
                     key={idx}
                     className="w-[300px] md:w-[340px] shrink-0 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col gap-4"
                   >
-                    {/* Comillas decorativas */}
-                    <span className="text-5xl leading-none text-[#AD131B] font-serif select-none">&ldquo;</span>
-                    <p className="text-gray-700 text-sm md:text-base leading-relaxed flex-1 -mt-4">
+                    {/* Encabezado: Comillas decorativas y 5 estrellas doradas */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-4xl leading-none text-[#AD131B] font-serif select-none">&ldquo;</span>
+                      <div className="flex items-center gap-1 text-amber-400">
+                        {[...Array(5)].map((_, s) => (
+                          <FaStar key={s} size={15} />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-700 text-sm md:text-base leading-relaxed flex-1 -mt-1">
                       {t.text}
                     </p>
                     <div className="pt-2 border-t border-gray-100">
