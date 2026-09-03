@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Políticas de Privacidad | FAMAX CONCRETO PERÚ",
     description: "Políticas de privacidad y tratamiento de datos personales de FAMAX CONCRETO PERÚ.",
     url: "https://www.famaxconcreto.com.pe/politicas-de-privacidad",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.famaxconcreto.com.pe/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

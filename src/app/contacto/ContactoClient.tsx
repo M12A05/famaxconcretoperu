@@ -53,7 +53,7 @@ export default function ContactoClient() {
               <div className="mb-12 opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-[2px] bg-[#AD131B]" />
-                  <h2 className="text-3xl lg:text-4xl font-black text-[#1A1A1A] tracking-tight">Cotiza tu Proyecto</h2>
+                  <h1 className="text-3xl lg:text-4xl font-black text-[#1A1A1A] tracking-tight">Cotiza tu Proyecto</h1>
                 </div>
                 <p className="text-gray-600 font-medium leading-relaxed max-w-md">
                   Concreto premezclado de alta resistencia para Lima Norte. Completa el formulario y nos comunicamos de inmediato.

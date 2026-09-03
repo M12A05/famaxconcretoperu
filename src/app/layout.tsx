@@ -60,6 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "FAMAX CONCRETO PERÚ",
+    image: `${BASE_URL}/og-image.jpg`,
+    logo: `${BASE_URL}/icon.png`,
     description:
       "Empresa peruana especializada en producción, suministro y logística integral de concreto premezclado y prefabricados en Lima Norte.",
     url: BASE_URL,

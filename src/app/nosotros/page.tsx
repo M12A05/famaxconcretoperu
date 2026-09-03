@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "¿Quiénes Somos? | FAMAX CONCRETO PERÚ",
     description: "Somos una concretera 100% peruana con laboratorio propio, flota de mixers y 6 años atendiendo Lima Norte con puntualidad y calidad.",
     url: "https://www.famaxconcreto.com.pe/nosotros",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.famaxconcreto.com.pe/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

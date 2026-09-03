@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Línea Ética | FAMAX CONCRETO PERÚ",
     description: "Reporta de forma confidencial cualquier conducta contraria a la ética de FAMAX CONCRETO PERÚ.",
     url: "https://www.famaxconcreto.com.pe/linea-etica",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.famaxconcreto.com.pe/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

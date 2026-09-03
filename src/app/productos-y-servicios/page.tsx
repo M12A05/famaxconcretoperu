@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Productos y Servicios | FAMAX CONCRETO PERÚ",
     description: "Catálogo completo de FAMAX: Concreto Premezclado f'c 210, Adoquines, Baldosas Podotáctiles, Bombeo y Alquiler de Mixers.",
     url: "https://www.famaxconcreto.com.pe/productos-y-servicios",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.famaxconcreto.com.pe/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -158,7 +158,7 @@ export default function ProductosServiciosPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    quality={92}
+                    quality={80}
                   />
                   {/* Sin overlay de texto — la info ya está en la tarjeta */}
                 </div>
