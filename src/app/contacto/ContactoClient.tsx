@@ -24,6 +24,10 @@ export default function ContactoClient() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (form.bot_field.trim() !== "") {
+      setStatus("success");
+      return;
+    }
     setStatus("loading");
     setErrorMsg("");
     try {
