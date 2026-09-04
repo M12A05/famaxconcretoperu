@@ -78,7 +78,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
             {/* Tarjeta 1: Concreto Premezclado */}
-            <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-left delay-100">
+            <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate bg-[#1A1A1A]" data-animation="animate-slide-left delay-100">
               {/* Imagen de fondo */}
               <Image
                 src="/images/concreto-premezclado.webp"
@@ -112,7 +112,7 @@ export default function Home() {
             </div>
 
             {/* Tarjeta 2: Adoquines de Concreto */}
-            <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-fade-up delay-200">
+            <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate bg-[#1A1A1A]" data-animation="animate-fade-up delay-200">
               <Image src="/images/adoquines.webp" alt="Adoquines de Concreto FAMAX" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
@@ -126,7 +126,7 @@ export default function Home() {
             </div>
 
             {/* Tarjeta 3: Baldosas Podotáctiles */}
-            <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate" data-animation="animate-slide-right delay-300">
+            <div className="group relative w-full h-[280px] sm:h-[320px] md:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md opacity-0 scroll-animate bg-[#1A1A1A]" data-animation="animate-slide-right delay-300">
               <Image src="/images/catalogo/baldosas-podotactiles.webp" alt="Baldosas Podotáctiles FAMAX" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-110" quality={85} />
               <div className="absolute inset-0 bg-[#1A1A1A]/75 sm:bg-[#1A1A1A]/0 sm:opacity-0 sm:group-hover:opacity-100 sm:bg-[#1A1A1A]/85 transition-opacity duration-300 z-10" />
               <div className="absolute bottom-0 left-0 w-full bg-[#DA291C] py-3 md:py-4 z-20 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-full">
@@ -208,7 +208,7 @@ export default function Home() {
               { img: "/images/proyecto2.webp" },
               { img: "/images/proyecto3.webp" }
             ].map((proj, i) => (
-              <div key={i} className={`group relative h-80 rounded-xl overflow-hidden shadow-md opacity-0 scroll-animate`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
+              <div key={i} className={`group relative h-80 rounded-xl overflow-hidden shadow-md opacity-0 scroll-animate bg-[#1A1A1A]`} data-animation={`animate-fade-up delay-${(i + 1) * 100}`}>
                 <Image src={proj.img} alt={`Proyecto ejecutado ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
               </div>

@@ -106,7 +106,7 @@ export default function ProductosServiciosPage() {
       <ScrollRevealObserver />
       {/* Hero */}
       <section
-        className="relative h-[30vh] min-h-[300px] lg:min-h-[350px] flex items-center overflow-visible bg-white"
+        className="relative h-[30vh] min-h-[300px] lg:min-h-[350px] flex items-center overflow-visible bg-[#1A1A1A]"
         style={{ clipPath: "ellipse(110% 100% at 50% 0%)" }}
       >
         <div className="absolute inset-0 z-0">

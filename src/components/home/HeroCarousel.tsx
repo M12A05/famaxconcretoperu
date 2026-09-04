@@ -97,7 +97,7 @@ export default function HeroCarousel() {
 
   return (
     <section 
-      className="relative h-[90vh] sm:h-[85vh] min-h-[520px] sm:min-h-[600px] flex items-center justify-start overflow-hidden group"
+      className="relative h-[90vh] sm:h-[85vh] min-h-[520px] sm:min-h-[600px] flex items-center justify-start overflow-hidden group bg-[#1A1A1A]"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
