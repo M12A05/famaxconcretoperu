@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     unoptimized: true,
+    qualities: [75, 80, 85, 90],
   },
 };
 
